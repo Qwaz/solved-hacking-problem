@@ -1,0 +1,27 @@
+﻿helloadmin
+iulover!@#$%
+
+@ addBook
+-> set book.isEBook = 0
+
+@ modifyInformation_vul
+-> set price, stock to -1, set bookname > 20 character
+
+@ main mode 4
+-> get offset
+
+@ modifyDescription_leak
+-> prefill stack with address
+
+@ modifyInformation_vul
+-> set book.bookname = './flag', book.freeShipping = 0, freeShippingPointer is not initialized
+
+@ modifyShipping_vul
+-> set book.freeShipping = 1
+
+@ viewBook_vul
+if !book.isEBook && book.freeShipping
+-> call printTxt with freeShippingPointer
+
+@ printTxt
+-> read flag!
