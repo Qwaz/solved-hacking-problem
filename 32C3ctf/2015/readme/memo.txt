@@ -1,8 +1,8 @@
-0x400D20 - flag is here
+ï»¿0x400D20 - flag is here
 0x4007E0 - entry function
 
 LIBC_FATAL_STDERR_ = 1
--> tty Ãâ·ÂÀ» ¸·À½
+-> tty ì¶œë ¥ì„ ë§‰ìŒ
 
 
 0x00007fffffffe810 - gets start
