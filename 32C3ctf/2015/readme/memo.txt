@@ -1,0 +1,13 @@
+0x400D20 - flag is here
+0x4007E0 - entry function
+
+LIBC_FATAL_STDERR_ = 1
+-> tty 출력을 막음
+
+
+0x00007fffffffe810 - gets start
+
+0x00007fffffffea20 - argc
+0x00007fffffffea28 - argv[0]
+
+0x00007fffffffea38 - env list start
