@@ -32,3 +32,6 @@ for i in range(100):
 	p.sendline(str(ans))
 	print p.recvline()
 
+print p.recvline()
+print p.recvline()
+
