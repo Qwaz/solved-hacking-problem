@@ -1,0 +1,1 @@
+The shark won't bite you. Don't worry, it's wired!
