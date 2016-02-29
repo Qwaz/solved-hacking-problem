@@ -1,0 +1,25 @@
+﻿
+0x401451 = 4199505 - jump here
+0x602090 = 6299792 - exit .got.plt
+0x602094 = 6299796
+0x602140 = 6299968 - memory
+
+diff 0xb0 = 176 | 176/4 = 44
+
+[수상한 부분 1]
+valid_mem 체크는 함수로 하지 않고 바로 배열에서 읽음
+
+[수상한 부분 2]
+reg2value에서 busy인 경우 0.1초 쉰다
+
+edx = 0 고정
+
+addi eax edx 4199505
+-
+addi ebx edx 44
+addi ebx edx 0
+sw eax ebx -44
+-
+addi ebx edx 43
+addi ebx edx 0
+sw edx ebx -43

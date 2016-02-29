@@ -1,0 +1,106 @@
+﻿<op2num>
+0 - add
+1 - sub
+2 - addi
+3 - subi
+4 - xor
+5 - print
+6 - lw
+7 - sw
+아니면 0xFFFFFFFF
+
+<reg2num>
+0 - eax
+1 - ebx
+2 - ecx
+3 - edx
+아니면 0xFFFFFFFF
+
+<init>
+if_id_ready
+id_ex_ready
+ex_mem_ready
+mem_wb_ready
+
+- 이전 스테이지에서 데이터를 준비할 때까지 기다리고
+- 다음 스테이지가 쉴 때까지 기다린다
+
+start_routine -> ID -> EX -> MEM -> WB
+
+[start_routine]
+1. while ( if_id_ready )
+2. inst에 명령어 받아서 넣음
+3. if_id_ready = 1
+
+[ID]
+1. while ( !if_id_ready )
+2. while ( id_ex_ready )
+3. id_ex_op = op2num
+4.
+{id_reg} - add, sub, xor
+    1. r0 = reg2num, r1 = reg2num, r2 = reg2num
+    2. id_ex_dst = r0, id_ex_data1 = reg2value(r1), id_ex_data2 = reg2value(r2)
+    3. set_reg_busy(id_ex_dst)
+
+{id_imm} - addi, subi, lw, sw
+    1. r0 = reg2num, r1 = reg2num, r2 = atoi
+    2. if (id_ex_op == lw || id_ex_op == sw) check valid_mem(reg_value[r1] + r2)
+    3. id_ex_dst = r0, id_ex_data1 = reg2value(r1), id_ex_data2 = r2
+    4. set_reg_busy(id_ex_dst)
+
+{id_print} - print
+    1. r0 = reg2num
+    2. id_ex_dst = 0xFFFFFFFF, id_ex_data1 = reg2value(r0)
+
+5. id_ex_ready = 1
+6. if_id_ready = 0
+
+[EX]
+1. while ( !id_ex_ready )
+2. while ( ex_mem_ready )
+3.
+{ex_add} - add, addi, lw, sw
+    ex_mem_data = id_ex_data1 + id_ex_data2
+
+{ex_sub} - sub, subi
+    ex_mem_data = id_ex_data1 - id_ex_data2
+
+{ex_xor} - xor
+    ex_mem_data = id_ex_data1 ^ id_ex_data2
+
+{ex_print} - print
+    printf("%d", id_ex_data1)
+
+4. ex_mem_dst = id_ex_dst, ex_mem_op = id_ex_op
+5. ex_mem_ready = 1
+6. id_ex_ready = 0
+
+[MEM]
+1. while ( !ex_mem_ready )
+2. while ( mem_wb_ready )
+3.
+if (ex_mem_op == lw)
+    mem_wb_data = memory[ex_mem_data]
+else if (ex_mem_op == sw)
+    printf("%p\n", &memory[ex_mem_data])
+    memory[ex_mem_data] = reg2value(ex_mem_dst)
+else
+    mem_wb_data = ex_mem_data
+
+4. mem_wb_dst = ex_mem_dst
+5. mem_wb_op = ex_mem_op
+6. mem_wb_ready = 1
+7. ex_mem_ready = 0
+
+[WB]
+1. while ( !mem_wb_ready )
+2.
+add, sub, addi, subi, xor, lw
+    set_reg(mem_wb_dst, mem_wb_data)
+
+3. unset_reg_busy(mem_wb_dst)
+4. mem_wb_ready = 0
+
+[reg2value]
+1. reg_busy[a1]이면 10초 대기
+2. return reg_value[a1]
