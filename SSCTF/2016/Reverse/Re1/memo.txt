@@ -1,0 +1,4 @@
+f363h = 4a ef bf bd ef bf bd ef bf bd 2e 43 47 3a
+f362g = <password>
+
+getpl(f363h, f362g) should be true

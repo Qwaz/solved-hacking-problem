@@ -1,0 +1,16 @@
+version: 2.0.1
+apkFileName: re1-e7e4ad1a.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '8'
+  targetSdkVersion: '19'
+packageInfo:
+  forced-package-id: '127'
+versionInfo:
+  versionCode: '1'
+  versionName: '1.0'
+compressionType: false
+sharedLibrary: false

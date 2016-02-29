@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Seclreg</string>
+    <string name="action_settings">Settings</string>
+    <string name="sign">Sign</string>
+    <string name="exit">Exit</string>
+    <string name="sign1">霹雳火</string>
+    <string name="user">编 号：</string>
+    <string name="no">密 码：</string>
+    <string name="username">secl-007</string>
+    <string name="number">******</string>
+    <string name="ssctf">A7B7C7D7E7F70717</string>
+</resources>

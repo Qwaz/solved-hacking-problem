@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: res/drawable-xhdpi/ic_launcher.png
+SHA1-Digest: TO6CkHyvAeGLE6XSpfA3+Ep4bSw=
+
+Name: res/layout/activity_seclreg.xml
+SHA1-Digest: FgL8l5N3Ico56K28SujJeNzgzMw=
+
+Name: AndroidManifest.xml
+SHA1-Digest: r3EnVHqJLggoob5Y49b/BF3oGJc=
+
+Name: res/drawable-mdpi/ic_launcher.png
+SHA1-Digest: 7XhCgwtcOBuoVDzITG5a9ExPmng=
+
+Name: res/drawable-hdpi/ic_launcher.png
+SHA1-Digest: cs3sBqPFp+vvmPUYI6BFO2KR/KA=
+
+Name: res/menu/seclreg.xml
+SHA1-Digest: Vz6j5nhlSkBUVJhOyJzPhuF5scQ=
+
+Name: lib/armeabi/libplokm.so
+SHA1-Digest: iMLcvliHBlUrvULoe4DrE6QERak=
+
+Name: resources.arsc
+SHA1-Digest: s44O7IVoz0YfntxUKy0d2UNElGw=
+
+Name: classes.dex
+SHA1-Digest: AegPGkEtJdI+vNOec/WdShzLlkg=
+
+Name: res/drawable-xxhdpi/ic_launcher.png
+SHA1-Digest: pURgcZEBTgmd7YS9PjhPgbxvXdQ=
+
+Name: res/drawable-hdpi/bck_sign.png
+SHA1-Digest: FyUA8xg9yNdiA29boN5phj/N6L4=
+

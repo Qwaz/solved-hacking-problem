@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="drawable" name="ic_launcher" id="0x7f020001" />
+    <public type="drawable" name="bck_sign" id="0x7f020000" />
+    <public type="layout" name="activity_seclreg" id="0x7f030000" />
+    <public type="dimen" name="activity_horizontal_margin" id="0x7f040000" />
+    <public type="dimen" name="activity_vertical_margin" id="0x7f040001" />
+    <public type="string" name="app_name" id="0x7f050000" />
+    <public type="string" name="action_settings" id="0x7f050001" />
+    <public type="string" name="sign" id="0x7f050002" />
+    <public type="string" name="exit" id="0x7f050003" />
+    <public type="string" name="sign1" id="0x7f050004" />
+    <public type="string" name="user" id="0x7f050005" />
+    <public type="string" name="no" id="0x7f050006" />
+    <public type="string" name="username" id="0x7f050007" />
+    <public type="string" name="number" id="0x7f050008" />
+    <public type="string" name="ssctf" id="0x7f050009" />
+    <public type="style" name="AppBaseTheme" id="0x7f060000" />
+    <public type="style" name="AppTheme" id="0x7f060001" />
+    <public type="menu" name="seclreg" id="0x7f070000" />
+    <public type="id" name="tv_Sign" id="0x7f080000" />
+    <public type="id" name="tv_user" id="0x7f080001" />
+    <public type="id" name="txt_user" id="0x7f080002" />
+    <public type="id" name="tv_no" id="0x7f080003" />
+    <public type="id" name="txt_no" id="0x7f080004" />
+    <public type="id" name="but_sign" id="0x7f080005" />
+    <public type="id" name="but_exit" id="0x7f080006" />
+    <public type="id" name="action_settings" id="0x7f080007" />
+</resources>

@@ -1,0 +1,37 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android)
+SHA1-Digest-Manifest: HWB2zirVMAC9iJrLEGLG4BqnQo8=
+
+Name: res/layout/activity_seclreg.xml
+SHA1-Digest: T61hqEgsuUbTT/i3wE7WudMj5ww=
+
+Name: res/drawable-xhdpi/ic_launcher.png
+SHA1-Digest: luF6B9PMajfLW2WipLNru/isPPM=
+
+Name: AndroidManifest.xml
+SHA1-Digest: N+Vdma7+zvwMjkb+A9INn4+OG8o=
+
+Name: res/drawable-mdpi/ic_launcher.png
+SHA1-Digest: /56eBjKSCjDVO4hIyrZ5e2iHCwM=
+
+Name: res/drawable-hdpi/ic_launcher.png
+SHA1-Digest: pwP0HV7CXOwJyMmo/lTrCpAUgNE=
+
+Name: res/menu/seclreg.xml
+SHA1-Digest: VOM7Ck+9n9PR0w7rzmQT6xdCkms=
+
+Name: lib/armeabi/libplokm.so
+SHA1-Digest: ce+Wqn01/QzI8qaVZfupRg7fUVo=
+
+Name: resources.arsc
+SHA1-Digest: OpGgtriJpCCV/flenD0qhafCUos=
+
+Name: classes.dex
+SHA1-Digest: Y26796PTzIWO/DJ39RYnHGSM7Fs=
+
+Name: res/drawable-xxhdpi/ic_launcher.png
+SHA1-Digest: 9BLIUPes23fEIlY6UGqkoILyq9M=
+
+Name: res/drawable-hdpi/bck_sign.png
+SHA1-Digest: Nu3xh4AatEqEM8iKpG1gglohfqo=
+

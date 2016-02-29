@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="tv_Sign">false</item>
+    <item type="id" name="tv_user">false</item>
+    <item type="id" name="txt_user">false</item>
+    <item type="id" name="tv_no">false</item>
+    <item type="id" name="txt_no">false</item>
+    <item type="id" name="but_sign">false</item>
+    <item type="id" name="but_exit">false</item>
+    <item type="id" name="action_settings">false</item>
+</resources>

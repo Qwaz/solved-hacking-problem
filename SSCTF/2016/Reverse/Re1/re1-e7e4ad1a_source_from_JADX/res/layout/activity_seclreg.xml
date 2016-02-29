@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:background="@drawable/bck_sign" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/activity_vertical_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="-1" android:layout_height="-1">
+    <TextView android:textSize="26dp" android:textColor="#ffffffff" android:layout_gravity="11" android:id="@id/tv_Sign" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="1dp" android:text="@string/sign1" />
+    <LinearLayout android:layout_gravity="1" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="30dp">
+        <TextView android:textColor="#ffffffff" android:id="@id/tv_user" android:layout_width="-2" android:layout_height="-2" android:text="@string/user" />
+        <EditText android:id="@id/txt_user" android:layout_width="-2" android:layout_height="-2" android:hint="007" android:ems="32" android:singleLine="true" android:maxLength="10" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="1" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp">
+        <TextView android:textColor="#ffffffff" android:id="@id/tv_no" android:layout_width="-2" android:layout_height="-2" android:text="@string/no" />
+        <EditText android:id="@id/txt_no" android:layout_width="-2" android:layout_height="-2" android:hint="@string/number" android:ems="32" android:singleLine="true" android:maxLength="40" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="1" android:orientation="0" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="20dp">
+        <Button android:textColor="#ffffffff" android:id="@id/but_sign" android:background="#4066dd00" android:layout_width="65dp" android:layout_height="40dp" android:text="@string/sign" />
+        <Button android:textColor="#ffffffff" android:id="@id/but_exit" android:background="#4066dd00" android:layout_width="65dp" android:layout_height="40dp" android:layout_marginLeft="50dp" android:text="@string/exit" />
+    </LinearLayout>
+</LinearLayout>
