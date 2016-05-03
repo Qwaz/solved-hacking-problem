@@ -1,0 +1,20 @@
+﻿http://200.200.200.52///index.php
+?search_cols=test&keyword=something&opeartor=and&query_parts=
+1=1 union (select 1 as idx, 1 as subject, 1 as content, 1 as writer))
+
+select * from board where AAA order by idx desc
+
+
+    function nojam_firewall(){
+        $INFO = parse_url($_SERVER['REQUEST_URI']);
+        parse_str($INFO['query'], $query);
+        $filter = ["union", "select", "information_schema", "from"];
+        foreach($query as $q){
+            foreach($filter as $f){
+                if (preg_match("/".$f."/i", $q)){
+                    nojam_log($INFO);
+                    die("attack detected!");
+                }
+            }
+        }
+    }
