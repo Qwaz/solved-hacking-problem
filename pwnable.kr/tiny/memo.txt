@@ -1,0 +1,16 @@
+
+break *0x8048074
+
+eax = argc
+edx = argv[0] first 4 bytes
+mov edx, DWORD PTR [edx]
+call edx
+
+
+vdso entry 0x55557000
+0x00000a13: add esp, 0x2c; pop ebx; pop esi; pop edi; pop ebp; ret;
+0x000005c8: add esp, 0x3c; pop ebx; pop esi; pop edi; pop ebp; ret;
+
+
+ulimit -s unlimited
+ulimit -c unlimited
