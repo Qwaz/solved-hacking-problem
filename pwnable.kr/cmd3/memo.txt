@@ -1,0 +1,47 @@
+# Memo
+filtered: ` !&|"'*
+0x20~0x7f
+no alphabet
+no number
+
+#$%(),-./:;<>=?@[]\^_{}~
+
+
+# Special Variables
+http://www.thegeekstuff.com/2010/05/bash-shell-special-parameters
+
+$-
+hrB
+
+$_
+[last argument]
+
+$#
+0 [number of positional parameters]
+
+$$
+[process id of rbash]
+
+$?
+[exit status of the most recently executed command]
+
+~+ current working directory
+~- previous working directory
+
+
+# Parameter Expansion
+https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
+
+# Special Characters
+http://tldp.org/LDP/abs/html/special-chars.html
+
+
+id, ls, cat
+
+hrB
+/home/cmd3_pwn
+/bin/rbash
+
+
+# ls
+????/??;${_:((-~($#-$#)-~($#-$#)-~($#-$#)-~($#-$#)-~($#-$#)))}
