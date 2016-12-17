@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:state_pressed="true" android:color="@c0235d/abc_search_url_text_pressed" />
+    <item android:state_selected="true" android:color="@c0235d/abc_search_url_text_selected" />
+    <item android:color="@c0235d/abc_search_url_text_normal" />
+</selector>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list>
+    <item android:id="0x1020000" android:drawable="@c0237f/abc_btn_rating_star_off_mtrl_alpha" />
+    <item android:id="0x102000f" android:drawable="@c0237f/abc_btn_rating_star_off_mtrl_alpha" />
+    <item android:id="0x102000d" android:drawable="@c0237f/abc_btn_rating_star_on_mtrl_alpha" />
+</layer-list>

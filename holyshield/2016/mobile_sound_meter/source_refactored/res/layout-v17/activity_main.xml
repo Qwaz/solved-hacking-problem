@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="0x7f080011" android:paddingTop="0x7f080044" android:paddingRight="0x7f080011" android:paddingBottom="0x7f080044" android:layout_width="-1" android:layout_height="-1">
+    <EditText android:id="0x7f0c0050" android:layout_width="300dp" android:layout_height="60dp" android:hint="아이디" android:layout_alignLeft="0x7f0c0051" android:layout_centerVertical="true" android:layout_alignStart="0x7f0c0051" />
+    <TextView android:textSize="60dp" android:textColor="#48f000" android:id="0x7f0c0052" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="35dp" android:text="HolyShield" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+    <Button android:textSize="30dp" android:textColor="#ffffff" android:id="0x7f0c0053" android:background="#48f000" android:layout_width="300dp" android:layout_height="50dp" android:layout_marginTop="39dp" android:text="로그인" android:layout_below="0x7f0c0051" android:layout_alignLeft="0x7f0c0051" android:layout_alignStart="0x7f0c0051" />
+    <EditText android:id="0x7f0c0051" android:layout_width="300dp" android:layout_height="60dp" android:hint="비밀번호" android:ems="10" android:layout_below="0x7f0c0050" android:layout_centerHorizontal="true" android:inputType="81" />
+</RelativeLayout>

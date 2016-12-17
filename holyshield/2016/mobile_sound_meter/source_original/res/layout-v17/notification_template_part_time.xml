@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DateTimeView android:textAppearance="@c0242k/TextAppearance_StatusBar_EventContent_Time" android:gravity="11" android:layout_gravity="11" android:id="@c0238g/time" android:paddingLeft="8dp" android:layout_width="-2" android:layout_height="-2" android:singleLine="true" android:layout_weight="0.0" android:paddingStart="8dp" />

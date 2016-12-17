@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:color="@c0235d/background_material_dark" android:state_accelerated="false" />
+    <item android:color="0x106000d" />
+</selector>

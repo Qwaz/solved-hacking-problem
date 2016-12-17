@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="0" android:id="@c0238g/status_bar_latest_event_content" android:layout_width="-1" android:layout_height="64dp">
+    <ImageView android:id="@c0238g/icon" android:layout_width="@c0236e/notification_large_icon_width" android:layout_height="@c0236e/notification_large_icon_width" android:scaleType="6" />
+    <include android:layout_width="0dp" android:layout_height="-2" android:layout_weight="1.0" layout="@c0240i/notification_template_lines" />
+    <LinearLayout android:layout_gravity="800015" android:orientation="0" android:id="@c0238g/media_actions" android:layout_width="-2" android:layout_height="-1" />
+    <include android:layout_width="48dp" android:layout_height="-1" android:layout_marginRight="6dp" layout="@c0240i/notification_media_cancel_action" />
+    <ImageView android:id="@c0238g/end_padder" android:layout_width="6dp" android:layout_height="-1" />
+</LinearLayout>

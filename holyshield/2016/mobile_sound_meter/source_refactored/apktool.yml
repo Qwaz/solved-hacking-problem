@@ -1,0 +1,22 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: 453c79b25fe34da843409a8e2eec2317_SoundMeter.apk
+compressionType: false
+doNotCompress:
+- arsc
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '15'
+  targetSdkVersion: '21'
+sharedLibrary: false
+unknownFiles: {}
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.2.1
+versionInfo:
+  versionCode: '1'
+  versionName: '1.0'

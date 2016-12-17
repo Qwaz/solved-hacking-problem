@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:paddingTop="2dp" android:paddingRight="8dp" android:paddingBottom="2dp" android:layout_width="-2" android:layout_height="-2" android:paddingEnd="8dp"
+    <LinearLayout android:orientation="0" android:id="@c0238g/line1" android:paddingTop="6dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="8dp" android:layout_marginStart="8dp">
+        <TextView android:textAppearance="@c0242k/TextAppearance_StatusBar_EventContent_Title" android:ellipsize="4" android:id="@c0238g/title" android:fadingEdge="1000" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+        <include android:layout_gravity="11" android:id="@c0238g/time" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_weight="0.0" layout="@c0240i/notification_template_part_time" />
+        <include android:layout_gravity="11" android:id="@c0238g/chronometer" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_weight="0.0" layout="@c0240i/notification_template_part_chronometer" />
+    </LinearLayout>
+    <TextView android:textAppearance="@c0242k/TextAppearance_StatusBar_EventContent_Line2" android:ellipsize="4" android:id="@c0238g/text2" android:visibility="2" android:fadingEdge="1000" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="8dp" android:layout_marginTop="-2dp" android:layout_marginBottom="-2dp" android:singleLine="true" android:layout_marginStart="8dp" />
+    <LinearLayout android:gravity="10" android:orientation="0" android:id="@c0238g/line3" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="8dp" android:layout_marginStart="8dp">
+        <TextView android:textAppearance="@c0242k/TextAppearance_StatusBar_EventContent" android:ellipsize="4" android:layout_gravity="11" android:id="@c0238g/text" android:fadingEdge="1000" android:layout_width="0dp" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+        <TextView android:textAppearance="@c0242k/TextAppearance_StatusBar_EventContent_Info" android:gravity="11" android:layout_gravity="11" android:id="@c0238g/info" android:paddingLeft="8dp" android:layout_width="-2" android:layout_height="-2" android:singleLine="true" android:layout_weight="0.0" android:paddingStart="8dp" />
+    </LinearLayout>
+</LinearLayout>

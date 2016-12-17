@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.view.menu.ActionMenuItemView android:textAppearance="?unknown_attr_ref: 7f01003d" android:textColor="?unknown_attr_ref: 7f01003e" android:gravity="11" android:layout_gravity="11" android:paddingLeft="8dp" android:paddingTop="4dp" android:paddingRight="8dp" android:paddingBottom="4dp" android:focusable="true" android:layout_width="-2" android:layout_height="-2" style="?unknown_attr_ref: 7f010055" />

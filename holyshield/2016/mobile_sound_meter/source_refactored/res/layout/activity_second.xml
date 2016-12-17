@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1">
+    <me.daei.soundmeter.widget.SoundDiscView android:id="0x7f0c0054" android:background="0x7f02004b" android:layout_width="344dp" android:layout_height="368dp" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+</RelativeLayout>

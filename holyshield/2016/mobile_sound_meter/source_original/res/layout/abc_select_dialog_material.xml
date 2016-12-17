@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView android:id="@c0238g/select_dialog_listview" android:paddingTop="@c0236e/abc_dialog_list_padding_vertical_material" android:paddingBottom="@c0236e/abc_dialog_list_padding_vertical_material" android:scrollbars="200" android:fadingEdge="0" android:clipToPadding="false" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@c0243l/View_android_theme" android:divider="?unknown_attr_ref: 7f010050" android:overScrollMode="1" style="@c0242k/Widget_AppCompat_ListView" />

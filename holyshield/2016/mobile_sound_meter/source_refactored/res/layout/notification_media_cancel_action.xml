@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageButton app:gravity="11" app:id="@c0238g/cancel_action" app:visibility="2" app:layout_width="48dp" app:layout_height="-1" app:layout_marginLeft="2dp" app:layout_marginRight="2dp" app:src="@c0237f/abc_ic_clear_mtrl_alpha" app:layout_weight="1.0" style="?unknown_attr_ref: 101032b" />

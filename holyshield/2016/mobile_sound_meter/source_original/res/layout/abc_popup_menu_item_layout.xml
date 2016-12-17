@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.view.menu.ListMenuItemView android:layout_width="-1" android:layout_height="?unknown_attr_ref: 7f010052" android:minWidth="196dp" style="@c0242k/RtlOverlay_Widget_AppCompat_PopupMenuItem">
+    <RelativeLayout android:layout_gravity="10" android:duplicateParentState="true" android:layout_width="0dp" android:layout_height="-2" android:layout_weight="1.0" style="@c0242k/RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup">
+        <TextView android:textAppearance="?unknown_attr_ref: 7f01004c" android:ellipsize="4" android:id="@c0238g/title" android:fadingEdge="1000" android:duplicateParentState="true" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_alignParentTop="true" style="@c0242k/RtlOverlay_Widget_AppCompat_PopupMenuItem_Text" />
+        <TextView android:textAppearance="?unknown_attr_ref: 7f01004d" android:id="@c0238g/shortcut" android:duplicateParentState="true" android:layout_width="-2" android:layout_height="-2" android:singleLine="true" android:layout_below="@c0238g/title" style="@c0242k/RtlOverlay_Widget_AppCompat_PopupMenuItem_Text" />
+    </RelativeLayout>
+</android.support.v7.view.menu.ListMenuItemView>
