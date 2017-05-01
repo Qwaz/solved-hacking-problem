@@ -1,0 +1,8 @@
+cmp A B
+
+JB -> A < B then jmp
+JA -> A > B then jmp
+JZ -> A == B then jmp
+
+
+JMPS -> always JMP?

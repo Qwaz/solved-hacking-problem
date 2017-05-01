@@ -1,0 +1,33 @@
+if (i1 == -1) {
+	if (i2 == -1) {
+		// IO Fault
+	} else {
+		if (i2 > PROGRAM_LEN) {
+			// Invalid Address
+		}
+		PROGRAM[i2] = fgetc(stdin);
+		if (PROGRAM[i2] > 0) {
+			offset += 3;
+		} else {
+			offset = i3;
+		}
+	}
+} else {
+	if (i2 == -1) {
+		if (i1 > PROGRAM_LEN) {
+			// Invalid Addresss
+		}
+		putchar(PROGRAM[i1]);
+		offset += 3;
+	} else {
+		if (i1 > PROGRAM_LEN || i2 > PROGRAM_LEN) {
+			// Invalid Address
+		}
+		PROGRAM[i2] -= PROGRAM[i1];
+		if (PROGRAM[i2] > 0) {
+			offset += 3;
+		} else {
+			offset = i3;
+		}
+	}
+}
