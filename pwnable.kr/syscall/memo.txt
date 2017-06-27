@@ -1,7 +1,0 @@
-8003f924 T prepare_kernel_cred
-8003f56c T commit_creds
-
-0x8000e348 SYS_CALL_TABLE
-
-syscall 목록 확인
-cat arm-linux-gnueabihf/asm/unistd.h
