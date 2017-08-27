@@ -1,0 +1,32 @@
+
+patch1:
+mov rax, cs:bitmaps_ptr
+mor [rax], rdi
+mov edx, 0x400
+mov esi, 0
+call _memset
+ret
+
+
+0xe6c
+
+mov eax, 0
+call get_empty_sector
+->
+call patch2
+
+patch2:
+call get_empty_sector
+push rax
+shl rax, 8
+mov rdi, rax
+mov rax, cs:mem_disk_ptr
+mov rax, [rax]
+add rdi, rax
+xor rsi, rsi
+mov rdx, rsi
+dec rsi
+mov edx, 0x400
+call _memset
+pop rax
+ret
