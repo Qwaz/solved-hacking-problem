@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="sample_text">false</item>
+    <item type="id" name="btRock">false</item>
+    <item type="id" name="btScissors">false</item>
+    <item type="id" name="btPaper">false</item>
+    <item type="id" name="btScore">false</item>
+    <item type="id" name="tvScore">false</item>
+</resources>

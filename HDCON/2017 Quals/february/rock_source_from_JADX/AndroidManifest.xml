@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="core.hdcon.android_2017" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="26" />
+    <application android:theme="@style/AppTheme" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:allowBackup="true" android:supportsRtl="true" android:roundIcon="@mipmap/ic_launcher_round">
+        <activity android:name="core.hdcon.android_2017.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="core.hdcon.android_2017.CallMe" android:exported="false">
+            <intent-filter android:priority="1">
+                <action android:name="core.hdcon.android2017.oops" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="core.hdcon.android_2017.WhyCall" android:exported="false">
+            <intent-filter android:priority="2">
+                <action android:name="core.hdcon.android2017.oops" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

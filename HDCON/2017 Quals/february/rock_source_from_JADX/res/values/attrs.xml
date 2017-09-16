@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="constraintSet">
+        <item>1</item>
+    </attr>
+    <attr name="layout_constraintBaseline_creator">
+        <item>4</item>
+    </attr>
+    <attr name="layout_constraintBaseline_toBaselineOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintBottom_creator">
+        <item>4</item>
+    </attr>
+    <attr name="layout_constraintBottom_toBottomOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintBottom_toTopOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintDimensionRatio">
+        <item>2</item>
+    </attr>
+    <attr name="layout_constraintEnd_toEndOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintEnd_toStartOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintGuide_begin">
+        <item>64</item>
+    </attr>
+    <attr name="layout_constraintGuide_end">
+        <item>64</item>
+    </attr>
+    <attr name="layout_constraintGuide_percent">
+        <item>32</item>
+    </attr>
+    <attr name="layout_constraintHeight_default">
+        <item>65536</item>
+        <item>0</item>
+        <item>1</item>
+    </attr>
+    <attr name="layout_constraintHeight_max">
+        <item>64</item>
+    </attr>
+    <attr name="layout_constraintHeight_min">
+        <item>64</item>
+    </attr>
+    <attr name="layout_constraintHorizontal_bias">
+        <item>32</item>
+    </attr>
+    <attr name="layout_constraintHorizontal_chainStyle">
+        <item>65536</item>
+        <item>0</item>
+        <item>2</item>
+        <item>1</item>
+    </attr>
+    <attr name="layout_constraintHorizontal_weight">
+        <item>32</item>
+    </attr>
+    <attr name="layout_constraintLeft_creator">
+        <item>4</item>
+    </attr>
+    <attr name="layout_constraintLeft_toLeftOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintLeft_toRightOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintRight_creator">
+        <item>4</item>
+    </attr>
+    <attr name="layout_constraintRight_toLeftOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintRight_toRightOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintStart_toEndOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintStart_toStartOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintTop_creator">
+        <item>4</item>
+    </attr>
+    <attr name="layout_constraintTop_toBottomOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintTop_toTopOf">
+        <item>65537</item>
+        <item>0</item>
+    </attr>
+    <attr name="layout_constraintVertical_bias">
+        <item>32</item>
+    </attr>
+    <attr name="layout_constraintVertical_chainStyle">
+        <item>65536</item>
+        <item>0</item>
+        <item>2</item>
+        <item>1</item>
+    </attr>
+    <attr name="layout_constraintVertical_weight">
+        <item>32</item>
+    </attr>
+    <attr name="layout_constraintWidth_default">
+        <item>65536</item>
+        <item>0</item>
+        <item>1</item>
+    </attr>
+    <attr name="layout_constraintWidth_max">
+        <item>64</item>
+    </attr>
+    <attr name="layout_constraintWidth_min">
+        <item>64</item>
+    </attr>
+    <attr name="layout_editor_absoluteX">
+        <item>64</item>
+    </attr>
+    <attr name="layout_editor_absoluteY">
+        <item>64</item>
+    </attr>
+    <attr name="layout_goneMarginBottom">
+        <item>64</item>
+    </attr>
+    <attr name="layout_goneMarginEnd">
+        <item>64</item>
+    </attr>
+    <attr name="layout_goneMarginLeft">
+        <item>64</item>
+    </attr>
+    <attr name="layout_goneMarginRight">
+        <item>64</item>
+    </attr>
+    <attr name="layout_goneMarginStart">
+        <item>64</item>
+    </attr>
+    <attr name="layout_goneMarginTop">
+        <item>64</item>
+    </attr>
+    <attr name="layout_optimizationLevel">
+        <item>131072</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+        <item>1</item>
+    </attr>
+</resources>

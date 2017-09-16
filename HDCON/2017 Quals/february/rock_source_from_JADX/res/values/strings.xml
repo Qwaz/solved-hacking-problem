@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HDCon</string>
+    <string name="f">This is Fake!!</string>
+    <string name="g">Genius of scissors rocks game...</string>
+    <string name="r">Inject Smali Code that print Log to See Flag</string>
+</resources>
