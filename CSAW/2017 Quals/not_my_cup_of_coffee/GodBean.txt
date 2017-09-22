@@ -1,0 +1,95 @@
+AC ED		Magic
+00 05		Version
+
+73		TC_OBJECT
+72		TC_CLASSDESC
+00 0B		Class Name Length
+63 6F 66 66 65 65 2E 42 65 61 6E	"coffee.Bean"
+00 00 00 00 00 00 00 01	SerialVersionUID
+02		Flag
+00 04		Number of Fields
+
+	4C		UNKNOWN
+	00 07		Some Length
+	69 6E 68 65 72 69 74	"inherit"
+	74		TC_STRING
+	00 0D		Length of the string
+	4C 63 6F 66 66 65 65 2F 42 65 61 6E 3B	"Lcoffee/Bean;"
+
+	4C		UNKNOWN
+	00 04		Some Length
+	6E 61 6D 65	"name"
+	74		TC_STRING
+	00 12		Length of the string
+	4C 6A 61 76 61 2F 6C 61 6E 67 2F 53 74 72 69 6E 67 3B	"Ljava/lang/String;"
+
+	4C		UNKNOWN
+	00 07		Some Length
+	70 61 72 65 6E 74 31	"parent1"
+	71 00 7E 00 01
+
+	4C		UNKNOWN
+	00 07		Some Length
+	70 61 72 65 6E 74 32	"parent2"
+	71 00 7E 00 01
+
+78		TC_ENDBLOCKDATA
+70		TC_NULL (end of class definition)
+
+# inherit
+73		TC_OBJECT
+72		TC_CLASSDESC
+00 0F		Class Name Length
+63 6F 66 66 65 65 2E 52 61 69 64 42 65 61 6E	"coffee.RaidBean"
+00 00 00 00 00 00 00 01	SerialVersionUID
+02		Flag
+00 00		Number of Fields
+78		TC_ENDBLOCKDATA
+71 00 7E 00 00
+
+	# inherit
+	70		TC_NULL
+
+	# name
+	74		TC_STRING
+	00 04		Length of the string
+	52 61 69 64	Raid
+
+	# parent1
+	70		TC_NULL
+
+	# parent2
+	70		TC_NULL
+
+# name
+74		TC_STRING
+00 03		Length of the string
+47 6F 64	"God"
+
+# parent1
+71 00 7E 00 05
+
+# parent2
+73		TC_OBJECT
+72		TC_CLASSDESC
+00 0D		Class Name Length
+63 6F 66 66 65 65 2E 4D 47 42 65 61 6E	"coffee.MGBean"
+00 00 00 00 00 00 00 01	SerialVersionUID
+02		Flag
+00 00		Number of Fields
+78		TC_ENDBLOCKDATA
+71 00 7E 00 00
+
+	# inherit
+	70
+	
+	# name
+	74		TC_STRING
+	00 02		Length of the string
+	4D 47		MG
+	
+	# parent1
+	70
+	
+	# parent2
+	70
