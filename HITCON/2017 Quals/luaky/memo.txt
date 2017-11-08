@@ -1,0 +1,5 @@
+a1 -> some struct
+a2 -> number of match
+a3 -> player
+a4 -> seed
+a5 -> print_result
