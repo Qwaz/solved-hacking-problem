@@ -1,0 +1,26 @@
+local
+  $(SML_LIB)/smlnj-lib/Util/smlnj-lib.mlb
+  $(MLTON_LIB)/mlton/basic/sources.mlb
+  $(SML_LIB)/basis/basis.mlb
+  ann
+    "warnUnused true"
+    "sequenceNonUnit warn"
+  in
+    variable.sml
+    assignable.sml
+    secrecy.sml
+    ann
+      "allowFFI true"
+    in
+      primitive.sml
+    end
+    language.sml
+    typeerror.sml
+    typechecker.sml
+    parse.sml
+    computation.sml
+    compile.sml
+  end
+in
+  run.sml
+end
