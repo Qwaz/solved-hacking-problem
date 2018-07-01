@@ -1,0 +1,5 @@
+file:///proc/self/cmdline
+file:///tmp/uwsgi.ini
+
+file:///app/run.py
+file:///app/session_interface.py
