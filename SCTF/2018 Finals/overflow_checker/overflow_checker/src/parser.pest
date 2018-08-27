@@ -1,0 +1,29 @@
+alpha = _{ 'a'..'z' | 'A'..'Z' | "_" }
+digit = _{ '0'..'9' }
+
+int = { digit+ }
+var = { alpha ~ (alpha | digit)* }
+
+block = { statement* }
+
+compare = { eq | lt | le | gt | ge }
+    eq = { var ~ "=" ~ int }
+    lt = { var ~ "<" ~ int }
+    le = { var ~ "<=" ~ int }
+    gt = { var ~ ">" ~ int }
+    ge = { var ~ ">=" ~ int }
+
+exp = { int | add | input | var }
+    add = { "(" ~ exp ~ "+" ~ exp ~ ")" }
+    input = { "input()" }
+
+statement = { assign | for_loop | if_else | exp }
+    assign = { var ~ "<-" ~ exp ~ ";" }
+    for_loop = { "for" ~ "(" ~ var ~ "<-" ~ "0" ~ ";"
+        ~ var ~ "<" ~ var ~ ";"
+        ~ var ~ "<-" ~ "(" ~ var ~ "+" ~ "1" ~ ")" ~ ")"
+        ~ "{" ~ block ~ "}" }
+    if_else = { "if" ~ "(" ~ compare ~ ")" ~ "{" ~ block ~ "}"
+        ~ ("else" ~ "{" ~ block ~ "}")? }
+
+whitespace = _{ " " | "\n" }

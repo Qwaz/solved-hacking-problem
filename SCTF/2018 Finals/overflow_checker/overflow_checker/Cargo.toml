@@ -1,0 +1,16 @@
+cargo-features = ["edition"]
+
+[package]
+name = "overflow_checker"
+version = "0.1.0"
+authors = ["Yechan Bae <qwazpia@gmail.com>"]
+edition = '2018'
+
+[dependencies]
+glob = "0.2"
+pest = "^1.0"
+pest_derive = "^1.0"
+
+[[bin]]
+name = "overflow_checker"
+path = "src/main.rs"

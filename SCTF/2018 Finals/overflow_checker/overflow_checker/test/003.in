@@ -1,0 +1,12 @@
+x_XltosjuB <- input();
+if( x_XltosjuB > 40 ) {
+  x_XltosjuB <- 4;
+}
+x_HhfluozJ <- 0;
+for( x_j8PWvfft <- 0; x_j8PWvfft < x_XltosjuB; x_j8PWvfft <- ( x_j8PWvfft + 1 )) {
+  x_GDp9VCGa <- input();
+  if( x_GDp9VCGa > 53513375 ) {
+    x_GDp9VCGa <- 53508172;
+  }
+  x_HhfluozJ <- ( x_HhfluozJ + x_GDp9VCGa );
+}

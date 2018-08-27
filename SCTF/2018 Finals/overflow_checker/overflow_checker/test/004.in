@@ -1,0 +1,31 @@
+x_7xui0TdY <- input();
+if( x_7xui0TdY > 1416599881 ) {
+  x_7xui0TdY <- 1416570981;
+}
+x_Nx64GXDa <- input();
+if( x_Nx64GXDa > 48 ) {
+  x_Nx64GXDa <- 43;
+}
+if( x_Nx64GXDa <= 60784 ) {
+  x_Nx64GXDa <- ( x_Nx64GXDa + 131 );
+}
+x_e5Rl2M74 <- 0;
+for( x_07UODKwA <- 0; x_07UODKwA < x_Nx64GXDa; x_07UODKwA <- ( x_07UODKwA + 1 )) {
+  x_P7Za60sM <- input();
+  if( x_P7Za60sM > 192 ) {
+    x_P7Za60sM <- 130;
+  }
+  x_SZU800yf <- 0;
+  for( x_C1Fy5CLz <- 0; x_C1Fy5CLz < x_P7Za60sM; x_C1Fy5CLz <- ( x_C1Fy5CLz + 1 )) {
+    x_JdLo7K62 <- input();
+    if( x_JdLo7K62 > 4087 ) {
+      x_JdLo7K62 <- 1022;
+    }
+    if( x_JdLo7K62 <= 27202 ) {
+      x_JdLo7K62 <- ( x_JdLo7K62 + 16848 );
+    }
+    x_SZU800yf <- ( x_SZU800yf + x_JdLo7K62 );
+  }
+  x_e5Rl2M74 <- ( x_e5Rl2M74 + x_SZU800yf );
+}
+x_9VGrIf6V <- ( x_7xui0TdY + x_e5Rl2M74 );

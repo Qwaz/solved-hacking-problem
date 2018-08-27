@@ -1,0 +1,7 @@
+x_KxU4Ip2c <- input();
+if( x_KxU4Ip2c > 2111654544 ) {
+  x_KxU4Ip2c <- 2111629029;
+}
+if( x_KxU4Ip2c <= 2111679052 ) {
+  x_KxU4Ip2c <- ( x_KxU4Ip2c + 44660 );
+}
