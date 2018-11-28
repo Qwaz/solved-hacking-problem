@@ -1,6 +1,8 @@
 # solved-hacking-problem
 This is a repository which contains CTF problems and solutions solved by Qwaz.
 
+The password for an encrypted solution is the flag of the problem.
+
 ## Disclaimer
 **I do not own the license of problem files.** They were added for readers' convenience.
 Please contact me if you are a problem author and want me to remove problem files from this repository.
