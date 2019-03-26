@@ -1,0 +1,28 @@
+handle SIGABRT pass
+
+break crypt_perm_decode
+commands
+set $buf = $rcx
+set $len = $rdx
+c
+end
+
+break *0x414759
+commands
+set $state = $rax
+c
+end
+
+break *0x4148BC
+commands
+print (void*)$state
+print (void*)$buf
+print (int)$len
+end
+
+break *0x41492F
+break *0x414A21
+
+break *0x4034A0
+break deathtrap
+break *0x403860
