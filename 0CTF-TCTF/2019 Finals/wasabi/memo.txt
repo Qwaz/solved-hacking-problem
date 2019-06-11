@@ -1,0 +1,52 @@
+https://github.com/CraneStation/wasmtime/blob/master/docs/WASI-api.md
+
+ID: im_hungry_pls_help_e
+flag{XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
+
+0x00400 - 0x10EE0 = data_segment_data_0
+0x12040 - 0x14A04 = 0x001FB5A0
+
+9 (0, 1, 2)
+7 (1, 0, 3)
+1 (2, 1, 0)
+7 (3, 2, 0)
+1 (4, 2, 3)
+3 (5, 4, 4)
+9 (7, 1, 4)
+8 (6, 1, 0)
+17 (7, 6, 3)
+8 (1, 6, 0)
+1 (1, 1, 0)
+14 (5, 1, 2)
+13 (-5, 0, 0)
+19 (8, 8, 6)
+
+1 - add(dest, src1, src2)
+2 - sub(dest, src1, src2)
+3 - mul(dest, src1, src2)
+7 - mov(dest, src, unused)
+8 - swap(reg1, reg2, unused)
+9 - mov_imm(dest, val_imm, unused)
+12 - jmp(offset_imm)
+13 - cond_jmp(offset_imm)
+14 - cmp(reg1, reg2, case_imm) // <, ==, >
+15 - open(fd, path_name, flags)
+16 - read(fd, buf, unused)
+17 - write(fd, buf, unused)
+18 - close(fd)
+
+reg0 = $1
+reg1 = reg0
+reg2 = reg0 + reg1
+reg3 = reg2
+reg4 = reg2 + reg3
+reg5 = reg4 * reg4
+reg7 = $1
+LOOP:
+swap reg6, reg1
+write(reg7, reg6)
+swap reg1, reg6
+reg1 = reg1 + reg0
+flag = reg5 > reg1
+if (flag) jmp LOOP
+nop
