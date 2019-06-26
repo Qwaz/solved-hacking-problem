@@ -1,0 +1,8 @@
+[package]
+name = "sandbox-sandstone"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+libc = "0.2.51"
+tempfile = "3.0.7"
