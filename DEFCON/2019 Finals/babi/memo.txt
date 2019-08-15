@@ -1,0 +1,49 @@
+N - NULL (0)
+N;
+
+b - bool (1)
+b:1;
+
+i - int (2)
+i:123;
+
+d - float (3)
+d:2342.234;
+UTF-8 check, f64
+
+s - string (4)
+s:7:"srnutyr"
+no UTF-8 check
+
+a - array (5)
+a:2:{b:1;i:234;}
+
+r - ref (6)
+r:5;
+
+
+
+00000000 babi::php::PhpVar struc ; (sizeof=0x38)
+
+00000000 var_type        db ?
+00000000
+00000001 bool_val        db ?
+00000001
+00000002                 db ?
+00000003                 db ?
+00000004                 db ?
+00000005                 db ?
+00000006                 db ?
+00000007                 db ?
+00000008 buf1_or_data    dq ?
+00000008
+00000010 buf1_cap        dq
+00000018 buf1_len        dq ?
+00000018
+00000020 buf2            dq ?
+00000020
+00000028 buf2_cap        dq
+00000030 buf2_len        dq ?
+00000030
+
+00000038 babi::php::PhpVar ends
