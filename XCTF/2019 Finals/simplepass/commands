@@ -1,0 +1,9 @@
+gdb opt-8
+break runOnFunction
+r -load ./SimplePass.so -SimplePass ./attack.bc
+break *0x7FFFF23A3B62
+break *0x7FFFF23A3C05
+break *0x7FFFF23A3C97
+break *0x7FFFF23A3F19
+break *0x7FFFF23A3FA5
+c

@@ -1,0 +1,562 @@
+Breakpoint 1 at 0x1388
+LEGEND: [33mSTACK[0m | [34mHEAP[0m | [31mCODE[0m | [35mDATA[0m | [4mRWX[0m | [0mRODATA[0m
+[34m─────────────────────────────────────────────────────────────────────────────────[ REGISTERS ]──────────────────────────────────────────────────────────────────────────────────[0m
+ [1mRAX [0m 0xfffffffffffffe00
+ [1mRBX [0m [35m0x7fab79865a00 (_IO_2_1_stdin_)[0m[0m ◂— [0m0xfbad208b
+ [1mRCX [0m [31m0x7fab7958a081 (read+17)[0m[0m ◂— [0m[38;5;148mcmp[39m[38;5;15m    [39m[38;5;81mrax[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15m-[39m[38;5;141m0x1000[39m /* 'H=' */
+ [1mRDX [0m 0x1
+ [1mRDI [0m 0x0
+ [1mRSI [0m [35m0x7fab79865a83 (_IO_2_1_stdin_+131)[0m[0m ◂— [0m0x8678d00000000000
+ [1mR8  [0m [35m0x7fab798678c0 (_IO_stdfile_1_lock)[0m[0m ◂— [0m0x0
+ [1mR9  [0m [35m0x7fab7ab1a080[0m[0m ◂— [0m0x7fab7ab1a080
+ [1mR10 [0m [0m0x5595b2d21046[0m[0m ◂— [0m0x3a657a6973007525 /* '%u' */
+ [1mR11 [0m 0x246
+ [1mR12 [0m [0m0x7fab79861760 (_IO_helper_jumps)[0m[0m ◂— [0m0x0
+ [1mR13 [0m [0m0x7fab798622a0 (_IO_file_jumps)[0m[0m ◂— [0m0x0
+ [1mR14 [0m [35m0x7fab79865a00 (_IO_2_1_stdin_)[0m[0m ◂— [0m0xfbad208b
+ [1mR15 [0m 0x0
+ [1mRBP [0m 0xd68
+ [1mRSP [0m [33m0x7ffd6b322f38[0m[0m —▸ [0m[31m0x7fab79507148 (_IO_file_underflow+296)[0m[0m ◂— [0m[38;5;148mtest[39m[38;5;15m   [39m[38;5;81mrax[39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mrax[39m
+ [1mRIP [0m [31m0x7fab7958a081 (read+17)[0m[0m ◂— [0m[38;5;148mcmp[39m[38;5;15m    [39m[38;5;81mrax[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15m-[39m[38;5;141m0x1000[39m /* 'H=' */
+[34m───────────────────────────────────────────────────────────────────────────────────[ DISASM ]───────────────────────────────────────────────────────────────────────────────────[0m
+[1m[32m ►[0m[1m[0m [1m[32m0x7fab7958a081[0m[1m[0m [1m[32m<read+17>  [0m[1m[0m   [1m[32m[38;5;148mcmp[39m[38;5;15m    [39m[38;5;81mrax[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15m-[39m[38;5;141m0x1000[39m[0m[1m[0m
+   [0m0x7fab7958a087[0m [0m<read+23>  [0m   [38;5;148m[1mja[0m[39m[38;5;15m     [39m[38;5;141mread+112[39m <[31m0x7fab7958a0e0[0m>
+[0m    ↓[0m
+   [0m0x7fab7958a0e0[0m [0m<read+112> [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mrdx[39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mqword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81mrip[39m[38;5;15m [39m[38;5;15m+[39m[38;5;15m [39m[38;5;141m0x2dad81[39m[38;5;15m][39m
+   [0m0x7fab7958a0e7[0m [0m<read+119> [0m   [38;5;148mneg[39m[38;5;15m    [39m[38;5;81meax[39m
+   [0m0x7fab7958a0e9[0m [0m<read+121> [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mdword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;81mfs[39m[38;5;15m:[39m[38;5;15m[[39m[38;5;81mrdx[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m[38;5;81meax[39m
+   [0m0x7fab7958a0ec[0m [0m<read+124> [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mrax[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15m-[39m[38;5;141m1[39m
+   [0m0x7fab7958a0f3[0m [0m<read+131> [0m   [38;5;148mret[39m[38;5;15m    [39m
+ 
+   [0m0x7fab7958a0f4[0m [0m<read+132> [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mrdx[39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mqword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81mrip[39m[38;5;15m [39m[38;5;15m+[39m[38;5;15m [39m[38;5;141m0x2dad6d[39m[38;5;15m][39m
+   [0m0x7fab7958a0fb[0m [0m<read+139> [0m   [38;5;148mneg[39m[38;5;15m    [39m[38;5;81meax[39m
+   [0m0x7fab7958a0fd[0m [0m<read+141> [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mdword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;81mfs[39m[38;5;15m:[39m[38;5;15m[[39m[38;5;81mrdx[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m[38;5;81meax[39m
+   [0m0x7fab7958a100[0m [0m<read+144> [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mrax[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15m-[39m[38;5;141m1[39m
+[34m───────────────────────────────────────────────────────────────────────────────────[ STACK ]────────────────────────────────────────────────────────────────────────────────────[0m
+[0m00[0m[0m:[0m[0m0000[0m[0m│[0m[0m[0m [1mrsp [0m [33m0x7ffd6b322f38[0m[0m —▸ [0m[31m0x7fab79507148 (_IO_file_underflow+296)[0m[0m ◂— [0m[38;5;148mtest[39m[38;5;15m   [39m[38;5;81mrax[39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mrax[39m
+[0m01[0m[0m:[0m[0m0008[0m[0m│[0m[0m[0m [1m    [0m [33m0x7ffd6b322f40[0m[0m —▸ [0m[35m0x7fab79865a00 (_IO_2_1_stdin_)[0m[0m ◂— [0m0xfbad208b
+[0m02[0m[0m:[0m[0m0010[0m[0m│[0m[0m[0m [1m    [0m [33m0x7ffd6b322f48[0m[0m —▸ [0m[0m0x7fab798622a0 (_IO_file_jumps)[0m[0m ◂— [0m0x0
+[0m03[0m[0m:[0m[0m0018[0m[0m│[0m[0m[0m [1m    [0m [33m0x7ffd6b322f50[0m[0m ◂— [0m0x0
+[0m04[0m[0m:[0m[0m0020[0m[0m│[0m[0m[0m [1m    [0m [33m0x7ffd6b322f58[0m[0m ◂— [0m0x75 /* 'u' */
+[0m05[0m[0m:[0m[0m0028[0m[0m│[0m[0m[0m [1m    [0m [33m0x7ffd6b322f60[0m[0m —▸ [0m[35m0x7fab79865a00 (_IO_2_1_stdin_)[0m[0m ◂— [0m0xfbad208b
+[0m06[0m[0m:[0m[0m0030[0m[0m│[0m[0m[0m [1m    [0m [33m0x7ffd6b322f68[0m[0m —▸ [0m[31m0x7fab795083f2 (_IO_default_uflow+50)[0m[0m ◂— [0m[38;5;148mcmp[39m[38;5;15m    [39m[38;5;81meax[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15m-[39m[38;5;141m1[39m
+[0m07[0m[0m:[0m[0m0038[0m[0m│[0m[0m[0m [1m    [0m [33m0x7ffd6b322f70[0m[0m ◂— [0m0x2d79726f6d656d3a (':memory-')
+[34m─────────────────────────────────────────────────────────────────────────────────[ BACKTRACE ]──────────────────────────────────────────────────────────────────────────────────[0m
+ ► f 0     7fab7958a081 read+17
+   f 1     7fab79507148 _IO_file_underflow+296
+   f 2     7fab795083f2 _IO_default_uflow+50
+   f 3     7fab794e5bea _IO_vfscanf+2474
+   f 4     7fab794f5fd8 __isoc99_scanf+280
+   f 5     5595b2d1fb91
+   f 6     7ffd6b3237a0
+   f 7     5595b2e87790
+   f 8     7ffd6b3237a0
+   f 9     5595b2d2032e
+   f 10     7ffd6b3237b8
+[34m────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────[0m
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000001388 <trace>
+        call printf $rdi $rsi $rdx $rcx $r8 $r9
+        continue
+Continuing.
+Warning:
+Cannot insert breakpoint 1.
+Cannot access memory at address 0x1388
+
+Command aborted.
+Continuing.
+Warning:
+Cannot insert breakpoint 1.
+Cannot access memory at address 0x1388
+
+Command aborted.
+Detaching from program: /XCTF/tnj/tnj, process 88067
+Breakpoint 1 at 0x5595b2d1f38c
+Continuing.
+A syntax error in expression, near `$rdi $rsi $rdx $rcx $r8 $r9'.
+LEGEND: [33mSTACK[0m | [34mHEAP[0m | [31mCODE[0m | [35mDATA[0m | [4mRWX[0m | [0mRODATA[0m
+[34m─────────────────────────────────────────────────────────────────────────────────[ REGISTERS ]──────────────────────────────────────────────────────────────────────────────────[0m
+ [1mRAX [0m 0x0
+ [1mRBX [0m 0x0
+ [1mRCX [0m 0x10
+ [1mRDX [0m [35m0x7fab798678d0 (_IO_stdfile_0_lock)[0m[0m ◂— [0m0x0
+ [1mRDI [0m [0m0x5595b2d21049[0m[0m ◂— [0m'size: %u\n'
+ [1mRSI [0m 0xb
+ [1mR8  [0m 0x1
+ [1mR9  [0m 0x0
+ [1mR10 [0m [31m0x7fab79618cc0 (_nl_C_LC_CTYPE_class+256)[0m[0m ◂— [0m[38;5;148madd[39m[38;5;15m    [39m[38;5;81mal[39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mbyte[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81mrax[39m[38;5;15m][39m
+ [1mR11 [0m [0m0x5595b2d21048[0m[0m ◂— [0m0x25203a657a697300
+ [1mR12 [0m [31m0x5595b2d1f290 (_start)[0m[0m ◂— [0m[38;5;148mxor[39m[38;5;15m    [39m[38;5;81mebp[39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mebp[39m
+ [1mR13 [0m [33m0x7ffd6b323920[0m[0m ◂— [0m0x2
+ [1mR14 [0m 0x0
+ [1mR15 [0m 0x0
+ [1mRBP [0m [33m0x7ffd6b323750[0m[0m —▸ [0m[33m0x7ffd6b323770[0m[0m —▸ [0m[33m0x7ffd6b3237a0[0m[0m —▸ [0m[33m0x7ffd6b3237d0[0m[0m —▸ [0m[33m0x7ffd6b323840[0m[0m ◂— [0m[0m...[0m
+ [1mRSP [0m [33m0x7ffd6b323750[0m[0m —▸ [0m[33m0x7ffd6b323770[0m[0m —▸ [0m[33m0x7ffd6b3237a0[0m[0m —▸ [0m[33m0x7ffd6b3237d0[0m[0m —▸ [0m[33m0x7ffd6b323840[0m[0m ◂— [0m[0m...[0m
+ [1mRIP [0m [31m0x5595b2d1f38c (trace+4)[0m[0m ◂— [0m[38;5;148msub[39m[38;5;15m    [39m[38;5;81mrsp[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0x48[39m
+[34m───────────────────────────────────────────────────────────────────────────────────[ DISASM ]───────────────────────────────────────────────────────────────────────────────────[0m
+[1m[32m ►[0m[1m[0m [1m[32m0x5595b2d1f38c[0m[1m[0m [1m[32m<trace+4>  [0m[1m[0m   [1m[32m[38;5;148msub[39m[38;5;15m    [39m[38;5;81mrsp[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0x48[39m[0m[1m[0m
+   [0m0x5595b2d1f390[0m [0m<trace+8>  [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mqword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81mrbp[39m[38;5;15m [39m[38;5;15m-[39m[38;5;15m [39m[38;5;141m0xb8[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mrdi[39m
+   [0m0x5595b2d1f397[0m [0m<trace+15> [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mqword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81mrbp[39m[38;5;15m [39m[38;5;15m-[39m[38;5;15m [39m[38;5;141m0xa8[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mrsi[39m
+   [0m0x5595b2d1f39e[0m [0m<trace+22> [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mqword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81mrbp[39m[38;5;15m [39m[38;5;15m-[39m[38;5;15m [39m[38;5;141m0xa0[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mrdx[39m
+   [0m0x5595b2d1f3a5[0m [0m<trace+29> [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mqword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81mrbp[39m[38;5;15m [39m[38;5;15m-[39m[38;5;15m [39m[38;5;141m0x98[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mrcx[39m
+   [0m0x5595b2d1f3ac[0m [0m<trace+36> [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mqword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81mrbp[39m[38;5;15m [39m[38;5;15m-[39m[38;5;15m [39m[38;5;141m0x90[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mr8[39m
+   [0m0x5595b2d1f3b3[0m [0m<trace+43> [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mqword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81mrbp[39m[38;5;15m [39m[38;5;15m-[39m[38;5;15m [39m[38;5;141m0x88[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mr9[39m
+   [0m0x5595b2d1f3ba[0m [0m<trace+50> [0m   [38;5;148mtest[39m[38;5;15m   [39m[38;5;81mal[39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mal[39m
+   [0m0x5595b2d1f3bc[0m [0m<trace+52> [0m   [38;5;148m[1mje[0m[39m[38;5;15m     [39m[38;5;141mtrace+86[39m <[31m0x5595b2d1f3de[0m>
+[0m    ↓[0m
+   [0m0x5595b2d1f3de[0m [0m<trace+86> [0m   [38;5;148mnop[39m[38;5;15m    [39m
+   [0m0x5595b2d1f3df[0m [0m<trace+87> [0m   [38;5;148mleave[39m[38;5;15m  [39m
+[34m───────────────────────────────────────────────────────────────────────────────────[ STACK ]────────────────────────────────────────────────────────────────────────────────────[0m
+[0m00[0m[0m:[0m[0m0000[0m[0m│[0m[0m[0m [1mrbp rsp [0m [33m0x7ffd6b323750[0m[0m —▸ [0m[33m0x7ffd6b323770[0m[0m —▸ [0m[33m0x7ffd6b3237a0[0m[0m —▸ [0m[33m0x7ffd6b3237d0[0m[0m —▸ [0m[33m0x7ffd6b323840[0m[0m ◂— [0m[0m...[0m
+[0m01[0m[0m:[0m[0m0008[0m[0m│[0m[0m[0m [1m        [0m [33m0x7ffd6b323758[0m[0m —▸ [0m[31m0x5595b2d1fbaa (get_attacker_shellcode+98)[0m[0m ◂— [0m[38;5;148mmov[39m[38;5;15m    [39m[38;5;81mrax[39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mqword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81mrbp[39m[38;5;15m [39m[38;5;15m-[39m[38;5;15m [39m[38;5;141m8[39m[38;5;15m][39m
+[0m02[0m[0m:[0m[0m0010[0m[0m│[0m[0m[0m [1m        [0m [33m0x7ffd6b323760[0m[0m —▸ [0m[33m0x7ffd6b3237a0[0m[0m —▸ [0m[33m0x7ffd6b3237d0[0m[0m —▸ [0m[33m0x7ffd6b323840[0m[0m —▸ [0m[31m0x5595b2d208f0 (__libc_csu_init)[0m[0m ◂— [0m[0m...[0m
+[0m03[0m[0m:[0m[0m0018[0m[0m│[0m[0m[0m [1m        [0m [33m0x7ffd6b323768[0m[0m —▸ [0m[34m0x5595b2e87790[0m[0m ◂— [0m0x55950000000b /* '\x0b' */
+[0m04[0m[0m:[0m[0m0020[0m[0m│[0m[0m[0m [1m        [0m [33m0x7ffd6b323770[0m[0m —▸ [0m[33m0x7ffd6b3237a0[0m[0m —▸ [0m[33m0x7ffd6b3237d0[0m[0m —▸ [0m[33m0x7ffd6b323840[0m[0m —▸ [0m[31m0x5595b2d208f0 (__libc_csu_init)[0m[0m ◂— [0m[0m...[0m
+[0m05[0m[0m:[0m[0m0028[0m[0m│[0m[0m[0m [1m        [0m [33m0x7ffd6b323778[0m[0m —▸ [0m[31m0x5595b2d2032e (init_map+34)[0m[0m ◂— [0m[38;5;148mmov[39m[38;5;15m    [39m[38;5;81mqword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81mrbp[39m[38;5;15m [39m[38;5;15m-[39m[38;5;15m [39m[38;5;141m0x10[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mrax[39m
+[0m06[0m[0m:[0m[0m0030[0m[0m│[0m[0m[0m [1m        [0m [33m0x7ffd6b323780[0m[0m —▸ [0m[33m0x7ffd6b3237b8[0m[0m —▸ [0m[34m0x5595b2e71490[0m[0m ◂— [0m0x4000000000000007
+[0m07[0m[0m:[0m[0m0038[0m[0m│[0m[0m[0m [1m        [0m [33m0x7ffd6b323788[0m[0m —▸ [0m[34m0x5595b2e71490[0m[0m ◂— [0m0x4000000000000007
+[34m─────────────────────────────────────────────────────────────────────────────────[ BACKTRACE ]──────────────────────────────────────────────────────────────────────────────────[0m
+ ► f 0     5595b2d1f38c trace+4
+   f 1     5595b2d1fbaa get_attacker_shellcode+98
+   f 2     5595b2d2032e init_map+34
+   f 3     5595b2d204f6 init_game+137
+   f 4     5595b2d20816 main+484
+   f 5     7fab7949bb97 __libc_start_main+231
+[34m────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────[0m
+Detaching from program: /XCTF/tnj/tnj, process 88067
+Breakpoint 1 at 0x55763961538c
+Continuing.
+$1 = 9
+Selected thread is running.
+$2 = 13
+Selected thread is running.
+$3 = 28
+Selected thread is running.
+$4 = 29
+Selected thread is running.
+$5 = 28
+Selected thread is running.
+$6 = 29
+Selected thread is running.
+$7 = 12
+Selected thread is running.
+$8 = 16
+Selected thread is running.
+$9 = 13
+Selected thread is running.
+$10 = 26
+Selected thread is running.
+$11 = 28
+Selected thread is running.
+[Inferior 1 (process 88113) exited normally]
+The program is not being run.
+Breakpoint 1 at 0x558de41b238c
+Continuing.
+$1 = 9
+Selected thread is running.
+$2 = 13
+Selected thread is running.
+$3 = 28
+Selected thread is running.
+$4 = 29
+Selected thread is running.
+$5 = 28
+Selected thread is running.
+$6 = 29
+Selected thread is running.
+$7 = 12
+Selected thread is running.
+$8 = 16
+Selected thread is running.
+$9 = 13
+Selected thread is running.
+$10 = 26
+Selected thread is running.
+$11 = 28
+Selected thread is running.
+$12 = 52
+Selected thread is running.
+$13 = 15
+Selected thread is running.
+$14 = 10
+Selected thread is running.
+$15 = 9
+Selected thread is running.
+$16 = 26
+Selected thread is running.
+$17 = 15
+Selected thread is running.
+$18 = 4
+Selected thread is running.
+[Inferior 1 (process 88130) exited normally]
+Breakpoint 1 at 0x55c3d9d9a38c
+Continuing.
+$1 = 9
+Selected thread is running.
+$2 = 13
+Selected thread is running.
+$3 = 28
+Selected thread is running.
+$4 = 29
+Selected thread is running.
+$5 = 28
+Selected thread is running.
+$6 = 29
+Selected thread is running.
+$7 = 12
+Selected thread is running.
+$8 = 16
+Selected thread is running.
+$9 = 13
+Selected thread is running.
+$10 = 26
+Selected thread is running.
+$11 = 28
+Selected thread is running.
+$12 = 52
+Selected thread is running.
+$13 = 15
+Selected thread is running.
+$14 = 10
+Selected thread is running.
+$15 = 9
+Selected thread is running.
+$16 = 26
+Selected thread is running.
+$17 = 15
+Selected thread is running.
+$18 = 4
+Selected thread is running.
+[Inferior 1 (process 88139) exited normally]
+Breakpoint 1 at 0x5572812a238c
+Continuing.
+$1 = 9
+Selected thread is running.
+$2 = 13
+Selected thread is running.
+$3 = 28
+Selected thread is running.
+$4 = 29
+Selected thread is running.
+$5 = 28
+Selected thread is running.
+$6 = 29
+Selected thread is running.
+$7 = 12
+Selected thread is running.
+$8 = 16
+Selected thread is running.
+$9 = 13
+Selected thread is running.
+$10 = 26
+Selected thread is running.
+$11 = 28
+Selected thread is running.
+$12 = 52
+Selected thread is running.
+$13 = 15
+Selected thread is running.
+$14 = 10
+Selected thread is running.
+$15 = 9
+Selected thread is running.
+$16 = 26
+Selected thread is running.
+$17 = 15
+Selected thread is running.
+$18 = 4
+Selected thread is running.
+[Inferior 1 (process 88148) exited normally]
+Breakpoint 1 at 0x55e83396e38c
+Continuing.
+$1 = 9
+Selected thread is running.
+$2 = 13
+Selected thread is running.
+$3 = 28
+Selected thread is running.
+$4 = 29
+Selected thread is running.
+$5 = 28
+Selected thread is running.
+$6 = 29
+Selected thread is running.
+$7 = 12
+Selected thread is running.
+$8 = 16
+Selected thread is running.
+$9 = 13
+Selected thread is running.
+$10 = 26
+Selected thread is running.
+$11 = 28
+Selected thread is running.
+$12 = 52
+Selected thread is running.
+$13 = 15
+Selected thread is running.
+$14 = 10
+Selected thread is running.
+$15 = 9
+Selected thread is running.
+$16 = 9
+Selected thread is running.
+$17 = 13
+Selected thread is running.
+$18 = 13
+Selected thread is running.
+$19 = 13
+Selected thread is running.
+$20 = 13
+Selected thread is running.
+$21 = 9
+Selected thread is running.
+$22 = 27
+Selected thread is running.
+$23 = 15
+Selected thread is running.
+$24 = 4
+Selected thread is running.
+[Inferior 1 (process 88157) exited normally]
+The program is not being run.
+Breakpoint 1 at 0x55e6dcbd638c
+Already logging to gdb.log.
+Breakpoint 2 at 0x55e6dcbd638c
+Continuing.
+$1 = 9
+Selected thread is running.
+Cannot execute this command while the selected thread is running.
+$2 = 13
+Selected thread is running.
+$3 = 28
+Selected thread is running.
+$4 = 29
+Selected thread is running.
+$5 = 28
+Selected thread is running.
+$6 = 29
+Selected thread is running.
+$7 = 12
+Selected thread is running.
+$8 = 16
+Selected thread is running.
+$9 = 13
+Selected thread is running.
+$10 = 26
+Selected thread is running.
+$11 = 28
+Selected thread is running.
+$12 = 52
+Selected thread is running.
+$13 = 15
+Selected thread is running.
+$14 = 10
+Selected thread is running.
+$15 = 9
+Selected thread is running.
+$16 = 26
+Selected thread is running.
+$17 = 15
+Selected thread is running.
+$18 = 4
+Selected thread is running.
+[Inferior 1 (process 88166) exited normally]
+The program is not being run.
+Breakpoint 1 at 0x138c
+Already logging to gdb.log.
+Breakpoint 2 at 0x138c
+The program is not being run.
+The program is not being run.
+Quit
+Breakpoint 1 at 0x55c4799fc38c
+Already logging to gdb.log.
+Breakpoint 2 at 0x55c4799fc38c
+Continuing.
+$1 = 9
+Selected thread is running.
+Cannot execute this command while the selected thread is running.
+$2 = 13
+Selected thread is running.
+$3 = 28
+Selected thread is running.
+$4 = 29
+Selected thread is running.
+$5 = 28
+Selected thread is running.
+$6 = 29
+Selected thread is running.
+$7 = 12
+Selected thread is running.
+$8 = 16
+Selected thread is running.
+$9 = 13
+Selected thread is running.
+$10 = 26
+Selected thread is running.
+$11 = 28
+Selected thread is running.
+$12 = 52
+Selected thread is running.
+$13 = 15
+Selected thread is running.
+$14 = 10
+Selected thread is running.
+$15 = 9
+Selected thread is running.
+$16 = 9
+Selected thread is running.
+$17 = 13
+Selected thread is running.
+$18 = 13
+Selected thread is running.
+$19 = 13
+Selected thread is running.
+$20 = 13
+Selected thread is running.
+$21 = 9
+Selected thread is running.
+$22 = 9
+Selected thread is running.
+$23 = 13
+Selected thread is running.
+$24 = 13
+Selected thread is running.
+$25 = 27
+Selected thread is running.
+$26 = 15
+Selected thread is running.
+$27 = 4
+Selected thread is running.
+[Inferior 1 (process 88179) exited normally]
+Undefined command: "gdb".  Try "help".
+Undefined command: "gdb".  Try "help".
+Already logging to gdb.log.
+Breakpoint 3 at 0x55c4799fc38c
+Already logging to gdb.log.
+Breakpoint 4 at 0x55c4799fc38c
+The program is not being run.
+The program is not being run.
+Breakpoint 1 at 0x560af028438c
+Already logging to gdb.log.
+Breakpoint 2 at 0x560af028438c
+Continuing.
+$1 = 9
+Selected thread is running.
+Cannot execute this command while the selected thread is running.
+$2 = 13
+Selected thread is running.
+$3 = 28
+Selected thread is running.
+$4 = 29
+Selected thread is running.
+$5 = 28
+Selected thread is running.
+$6 = 29
+Selected thread is running.
+$7 = 12
+Selected thread is running.
+$8 = 16
+Selected thread is running.
+$9 = 13
+Selected thread is running.
+$10 = 27
+Selected thread is running.
+[Inferior 1 (process 88193) exited with code 01]
+Breakpoint 1 at 0x5628bb2d538c
+Already logging to gdb.log.
+Breakpoint 2 at 0x5628bb2d538c
+Continuing.
+$1 = 9
+Selected thread is running.
+Cannot execute this command while the selected thread is running.
+$2 = 13
+Selected thread is running.
+$3 = 28
+Selected thread is running.
+$4 = 29
+Selected thread is running.
+$5 = 28
+Selected thread is running.
+$6 = 29
+Selected thread is running.
+$7 = 12
+Selected thread is running.
+$8 = 16
+Selected thread is running.
+$9 = 13
+Selected thread is running.
+$10 = 26
+Selected thread is running.
+$11 = 28
+Selected thread is running.
+$12 = 52
+Selected thread is running.
+$13 = 15
+Selected thread is running.
+$14 = 10
+Selected thread is running.
+$15 = 9
+Selected thread is running.
+$16 = 26
+Selected thread is running.
+$17 = 15
+Selected thread is running.
+$18 = 4
+Selected thread is running.
+[Inferior 1 (process 88208) exited normally]
+Breakpoint 1 at 0x55e36d57338c
+Already logging to gdb.log.
+Breakpoint 2 at 0x55e36d57338c
+Continuing.
+$1 = 9
+Selected thread is running.
+Cannot execute this command while the selected thread is running.
+Detaching from program: /XCTF/tnj/tnj, process 88222
+Breakpoint 1 at 0x55ab75dbd38c
+Already logging to gdb.log.
+Breakpoint 2 at 0x55ab75dbd38c
+Continuing.
+$1 = 9
+Selected thread is running.
+Cannot execute this command while the selected thread is running.
+$2 = 13
+Selected thread is running.
+$3 = 28
+Selected thread is running.
+$4 = 29
+Selected thread is running.
+$5 = 28
+Selected thread is running.
+$6 = 29
+Selected thread is running.
+$7 = 12
+Selected thread is running.
+$8 = 16
+Selected thread is running.
+$9 = 13
+Selected thread is running.
+$10 = 26
+Selected thread is running.
+$11 = 28
+Selected thread is running.
+$12 = 1204
+Selected thread is running.
+$13 = 15
+Selected thread is running.
+$14 = 10
+Selected thread is running.
+$15 = 9
+Selected thread is running.
+$16 = 9
+Selected thread is running.
+$17 = 13
+Selected thread is running.
+$18 = 13
+Selected thread is running.
+$19 = 27
+Selected thread is running.
+$20 = 15
+Selected thread is running.
+$21 = 4
+Selected thread is running.
+[Inferior 1 (process 88231) exited normally]

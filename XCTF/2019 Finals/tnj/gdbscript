@@ -1,0 +1,7 @@
+set logging on gdb.log
+set follow-fork-mode parent
+break trace
+commands
+call printf($rdi, $rsi, $rdx, $rcx, $r8, $r9)
+continue
+end
