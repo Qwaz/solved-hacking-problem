@@ -1,0 +1,101 @@
+(jspb.BinaryReader.prototype.nextField = function () {
+  if (this.decoder_.atEnd()) return !1;
+  if (this.getError())
+    return goog.asserts.fail("Decoder hit an error"), !1;
+  this.fieldCursor_ = this.decoder_.getCursor();
+  var e = this.decoder_.readUnsignedVarint32(),
+    t = e >>> 3;
+  return (e &= 7) != jspb.BinaryConstants.WireType.VARINT &&
+    e != jspb.BinaryConstants.WireType.FIXED32 &&
+    e != jspb.BinaryConstants.WireType.FIXED64 &&
+    e != jspb.BinaryConstants.WireType.DELIMITED &&
+    e != jspb.BinaryConstants.WireType.START_GROUP &&
+    e != jspb.BinaryConstants.WireType.END_GROUP
+    ? (goog.asserts.fail(
+        "Invalid wire type: %s (at position %s)",
+        e,
+        this.fieldCursor_
+      ),
+      (this.error_ = !0),
+      !1)
+    : ((this.nextField_ = t), (this.nextWireType_ = e), !0);
+}),
+
+0	Varint	int32, int64, uint32, uint64, sint32, sint64, bool, enum
+1	64-bit	fixed64, sfixed64, double
+2	Length-delimited	string, bytes, embedded messages, packed repeated fields
+3	Start group	groups (deprecated)
+4	End group	groups (deprecated)
+5	32-bit	fixed32, sfixed32, float
+
+readDocument():
+    readField()
+    1 => {
+        title = readString()
+    }
+    100 => {
+        readMessage()
+        readPage()
+    }
+
+readPage():
+    readField()
+    1 => {
+        readMessage()
+        readElement()
+    }
+
+readElement():
+    readField()
+    1 => {
+        readMessage()
+        readText()
+    }
+    2 => {
+        form = readString()
+    }
+    3 => {
+        readMessage()
+        readBar()
+    }
+
+readBar():
+    readField()
+    1 => {
+        readMessage()
+        rect = readRect()
+    }
+
+readText():
+    readField()
+    1 => {
+        fontFamily = readString()
+    }
+    2 => {
+        fontSize = readString()
+    }
+    3 => {
+        fontWeight = readInt32()
+    }
+    4 => {
+        readMessage()
+        rect = readRect()
+    }
+    5 => {
+        content = readString()
+    }
+
+readRect():
+    readField()
+    1 => {
+        x = readDouble()
+    }
+    2 => {
+        y = readDouble()
+    }
+    3 => {
+        width = readDouble()
+    }
+    4 => {
+        height = readDouble()
+    }

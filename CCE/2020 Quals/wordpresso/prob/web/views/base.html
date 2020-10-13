@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <style>
+        #masthead {
+            background: #555;
+        }
+
+        #masthead .item {
+            margin: 0 1rem;
+            border-radius: 0;
+            line-height: 100%;
+        }
+
+        #masthead .logo.item {
+            font-size: 1.5rem;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="ui secondary inverted menu" id="masthead">
+    <div class="ui container">
+        <a class="logo item" href="/">
+            <i class="cloud icon"></i>
+            Wordpresso
+        </a>
+        <a class="item" href="/editor">Editor</a>
+        <a href="/examples" class="item">Gallery</a>
+        <a href="/report" class="item">Report</a>
+    </div>
+</div>
+<div class="ui container">
+    {%block content%}
+    {%endblock%}
+</div>
+</body>
+</html>

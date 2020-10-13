@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{%block title%}Wordpresso{%endblock%}
+{%block content%}
+<h1>Report URL</h1>
+<form method="POST" action="/report" class="ui form">
+    <p>Admin will visit your URL shortly.</p>
+    <div class="field">
+        <input type="text" name="url" id="url" placeholder="{{ HOST }}...">
+    </div>
+    <button type="submit" class="ui button">Report!</button>
+</form>
+{%endblock%}

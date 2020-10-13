@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{%block title%}Wordpresso{%endblock%}
+{%block content%}
+<h1>Gallery</h1>
+<p>Example document files here.</p>
+<div class="ui list">
+    {%for item in examples %}
+    <a href="/examples/{{item}}" class="ui item">
+        <i class="file alternate icon"></i>
+        {{item | capitalize}}
+    </a>
+    {%endfor%}
+</div>
+{%endblock%}

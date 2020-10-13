@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login :: asqwerdf company</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <section>
+      <div class="py-3">
+        <div class="container">       
+          <form>
+            <div class="form-group">
+              <label for="id">ID</label>
+                <input type="text" class="form-control" aria-describedby="idHelp" placeholder="아이디를 입력해주세요." id="id">
+                <p id="idHelp" class="form-text" style="color: rgb(108, 117, 125); display:none;">아이디를 입력해주세요.</p>
+            </div>
+            <div class="form-group">
+              <label for="pw">PW</label>
+              <input type="password" class="form-control" aria-describedby="pwHelp" placeholder="비밀번호를 입력해주세요." id="pw">
+              <p id="pwHelp" class="form-text"  style="color: rgb(108, 117, 125); display:none;">비밀번호를 입력해주세요.</p>
+            </div>
+            <button type="button" class="btn btn-primary" id="submit">Submit</button>
+            <p id="loginHelp" class="form-text"  style="color: red; display:none;">로그인에 실패했어요.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="/login.js"></script>
+  </body>
+</html>

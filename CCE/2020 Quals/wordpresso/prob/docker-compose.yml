@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  web:
+    build: web
+    ports:
+      - "8080:8080"
+    secrets:
+      - sensitive
+    environment:
+      - HOST=http://localhost:8080
+      - PORT=8080
+
+secrets:
+  sensitive:
+    file: sensitive

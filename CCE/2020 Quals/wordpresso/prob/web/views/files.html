@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{%block title%}Wordpresso{%endblock%}
+{%block content%}
+<style>
+    h1.ui.dividing.header {
+        padding-bottom: 8px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+
+    input {
+        margin-right: 8px !important;
+    }
+
+    div.ui.empty.item {
+        font-size: 2rem;
+        color: #ccc;
+    }
+</style>
+<h1 class="ui dividing header">
+    Files
+</h1>
+<form action="/upload" method="POST" enctype="multipart/form-data" class="ui form">
+    <input type="file" name="document"/>
+    <button type="submit" class="ui labeled icon button">
+        <i class="upload icon"></i>
+        Upload
+    </button>
+</form>
+<div class="ui large relaxed list" id="files">
+    {%for doc in docs %}
+    <a class="ui item" href="/d/{{doc[0]}}">
+        <i class="file alternate icon"></i>
+        <div class="content">
+            {{doc[1].title | capitalize}}
+        </div>
+    </a>
+    {%else%}
+    <div class="ui empty item">No files yet - upload a file to get started!</div>
+    {%endfor%}
+</div>
+{%endblock%}

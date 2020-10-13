@@ -1,0 +1,8 @@
+{
+    "server":"15.165.73.176",
+    "server_port":8388,
+    "local_port":1080,
+    "password":"????????",
+    "timeout":60,
+    "method":"aes-256-cfb"
+}

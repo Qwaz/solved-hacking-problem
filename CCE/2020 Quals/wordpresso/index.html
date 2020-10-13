@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Wordpresso</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <style>
+        #masthead {
+            background: #555;
+        }
+
+        #masthead .item {
+            margin: 0 1rem;
+            border-radius: 0;
+            line-height: 100%;
+        }
+
+        #masthead .logo.item {
+            font-size: 1.5rem;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="ui secondary inverted menu" id="masthead">
+    <div class="ui container">
+        <a class="logo item" href="/">
+            <i class="cloud icon"></i>
+            Wordpresso
+        </a>
+        <a class="item" href="/editor">Editor</a>
+        <a href="/examples" class="item">Gallery</a>
+        <a href="/report" class="item">Report</a>
+    </div>
+</div>
+<div class="ui container">
+    
+<style>
+    h1.ui.dividing.header {
+        padding-bottom: 8px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+
+    input {
+        margin-right: 8px !important;
+    }
+
+    div.ui.empty.item {
+        font-size: 2rem;
+        color: #ccc;
+    }
+</style>
+<h1 class="ui dividing header">
+    Files
+</h1>
+<form action="/upload" method="POST" enctype="multipart/form-data" class="ui form">
+    <input type="file" name="document"/>
+    <button type="submit" class="ui labeled icon button">
+        <i class="upload icon"></i>
+        Upload
+    </button>
+</form>
+<div class="ui large relaxed list" id="files">
+    
+    <a class="ui item" href="/d/41cb85ff5d4dd5e98b605c3f12ba61d1e5e690148cce08ccd8e83188fe7dbbd7">
+        <i class="file alternate icon"></i>
+        <div class="content">
+            Flag
+        </div>
+    </a>
+    
+</div>
+
+</div>
+</body>
+</html>

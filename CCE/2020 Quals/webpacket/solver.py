@@ -1,0 +1,6 @@
+pw = "@@F\u0011\u0013\u0011\u0013XAE\u001a\u0011G\u0010\u0013\u0015\u0014F\u0015G\u001a\u001b\u0013\u0013\u001b\u0016BE\u0012\u0013B\u0017\u001a\u0011AF@\u0011E\u0016^"
+
+flag = ""
+for c in pw:
+    flag += chr(ord(c) ^ 0x23)
+print(flag)

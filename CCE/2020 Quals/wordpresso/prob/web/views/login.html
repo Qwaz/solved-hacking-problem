@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{%block title%}Wordpresso{%endblock%}
+{%block content%}
+<style>
+    .desc {
+        line-height: 180%;
+        color: #888;
+    }
+</style>
+{%if error%}
+<div class="ui message">{{ error }}</div>
+{%endif%}
+<div class="ui internally celled grid">
+    <div class="eight wide column">
+        <form class="ui form" method="POST" action="/login">
+            <h2 class="ui header">Login / Register</h2>
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="user icon"></i>
+                    <input type="text" name="username" placeholder="User name" value="{{username}}">
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="lock icon"></i>
+                    <input type="password" name="password" placeholder="Password" value="{{password}}">
+                </div>
+            </div>
+            <button type="submit" class="ui teal submit button">Login</button>
+        </form>
+    </div>
+    <div class="eight wide column">
+        <h2 class="ui header">About</h2>
+        <div class="desc">
+            After some years of research, we finally created our own document format and Web-based renderer.
+            Our binary format can represent a document with several pages & elements.
+            And here is lorem ipsum (I like fancy stuffs):<br/><br/>
+
+            <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a finibus urna, nec iaculis est. Etiam justo
+                nunc, euismod at convallis eget, viverra in lectus. Maecenas eget vestibulum ligula. Nunc et enim ut
+                nisi efficitur pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                inceptos himenaeos. ...</em>
+        </div>
+    </div>
+</div>
+{%endblock%}

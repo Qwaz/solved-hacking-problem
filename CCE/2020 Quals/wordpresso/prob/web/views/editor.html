@@ -1,0 +1,69 @@
+{%extends 'base.html'%}
+{%block title%}Editor{%endblock%}
+{%block content%}
+<h1>Wordpresso Editor</h1>
+<xmp>// It's text-only because I lost the source code of my editor...
+</xmp>
+
+<form action="/editor" class="ui form" onsubmit="return generate(this)">
+    <div class="ui field">
+        <input type="text" name="title" placeholder="Title here...">
+    </div>
+    <div class="ui field">
+        <textarea name="content" cols="30" rows="10" placeholder="Content here..."></textarea>
+    </div>
+    <button class="ui labeled icon button" type="submit">
+        <i class="download icon"></i>
+        Generate file
+    </button>
+</form>
+
+<script>
+    function bytes(str) {
+        return [...str].map(x => x.charCodeAt(0))
+    }
+
+    function uleb128(integer) {
+        const result = []
+        do {
+            let byte = integer & 0x7F
+            integer >>= 7
+            if (integer)
+                byte |= 0x80
+            result.push(byte)
+        } while (integer)
+        return result
+    }
+
+    function wrap(payload) {
+        return [...uleb128(payload.length), ...payload]
+    }
+
+    function generate(form) {
+        const payload = [
+            0x0A, ...wrap(bytes(form.title.value)),
+            0xA2, 0x06, ...wrap([
+                0xA,
+                ...wrap([0xA,
+                    ...wrap([
+                        0x22, 0x12, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x30, 0x40, 0x11, 0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x30, 0x40, 0x2A,
+                        ...wrap(bytes(form.content.value))
+                    ])
+                ])
+            ])
+        ]
+        const blob = new Blob([new Uint8Array(payload)], {
+            type: 'application/octet-stream'
+        })
+
+        const a = document.createElement('a')
+        a.href = URL.createObjectURL(blob)
+        a.download = form.title.value + '.wordpresso'
+        a.click()
+
+        return false
+    }
+</script>
+{%endblock%}

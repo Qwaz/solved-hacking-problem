@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Document Viewer</title>
+    <script src="/render.min.js"></script>
+    <style>
+        body {
+            margin: 30px;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .toolbox {
+            z-index: 100;
+            position: absolute;
+            top: 1em;
+            right: 1em;
+        }
+    </style>
+</head>
+<body>
+<div id="content"></div>
+<div class="toolbox">
+    <a class="ui right labeled icon button" href="#" id="downloader">
+        <i class="download icon"></i>
+        Download
+    </a>
+</div>
+<script>
+    const documentArr = Uint8Array.from(atob('{{ document }}'), c => c.charCodeAt(0))
+    const downloader = document.querySelector('#downloader')
+
+    addEventListener('load', () => {
+        load(documentArr)
+    })
+
+    downloader.onclick = function () {
+        if (downloader.href.startsWith('blob:'))
+            return
+
+        downloader.href = URL.createObjectURL(new Blob([documentArr], {type: 'application/octet-stream'}))
+        downloader.download = document.title + '.wordpresso'
+        event.click()
+
+        return false
+    }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+</body>
+</html>
