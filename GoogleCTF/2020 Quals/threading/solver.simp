@@ -1,0 +1,78 @@
+semaphore start_sem = 0;
+semaphore s1 = 0;
+semaphore s2 = 0;
+semaphore overwrite = 0;
+semaphore overwrite_done = 0;
+semaphore done_sem = 0;
+int32 no_opt = 0;
+int32 no_opt2 = 0;
+int32 i = 0;
+
+def void huge() {
+    up(s1);
+    down(s2);
+    if (no_opt == 1) {
+        array<uint64, 37918> reserve;
+        reserve[no_opt] = no_opt;
+    }
+    array<uint64, 512> arr;
+    down(overwrite);
+
+    arr[0] = 10416984888683040912;
+    arr[1] = 10416984888683040912;
+    arr[2] = 10416984888683040912;
+
+    arr[3] = 10416984888683053105;
+    arr[4] = 5257443803835484240;
+    arr[5] = 8299904789528063931;
+    arr[6] = 364575723539944296;
+    
+    arr[7] = 14757395258967641292;
+
+    i = 256;
+    while (i < 512) {
+        arr[i] = 3819;
+        i = i + 1;
+    }
+
+    up(overwrite_done);
+}
+
+def void deep(int32 iter) {
+    if (no_opt == 1) {
+        array<uint64, 512> reserve;
+        reserve[no_opt] = no_opt;
+    }
+    if (iter == 8) {
+        up(overwrite);
+        down(overwrite_done);
+    }
+    if (iter < 8) {
+        deep(iter + 1);
+    }
+}
+
+def void f1() {
+    up(start_sem);
+    down(s1);
+    no_opt = 2;
+    up(s2);
+    deep(0);
+    down(done_sem);
+}
+
+def void f2() {
+    down(start_sem);
+    huge();
+    print("Finished running huge");
+    up(done_sem);
+}
+
+def int32 main() {
+    usleep(1000 * 1000);
+    thread t2 = make_thread(f2);
+    thread t1 = make_thread(f1);
+    join(t1);
+    join(t2);
+    return 0;
+}
