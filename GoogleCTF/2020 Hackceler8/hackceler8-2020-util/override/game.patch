@@ -1,0 +1,166 @@
+diff -ruN original/common/entities.js patched/localhost%3a4567/common/entities.js
+--- original/common/entities.js	2020-10-18 08:25:21.420000000 -0400
++++ patched/localhost%3a4567/common/entities.js	2020-10-18 09:34:35.630000000 -0400
+@@ -165,6 +165,25 @@
+       }
+     }
+ 
++    const savedAnimStartTick = this.animStartTick;
++    const savedAnimFrameCount = this.animFrameCount;
++    const savedAnimFrameDuration = this.animFrameDuration;
++    const savedFrameState = this.frameState;
++    const savedFrame = this.frame;
++    const savedMoveV = this.moveV;
++    const savedJumpV = this.jumpV;
++
++    for(let i = 0; i < 2; i++) {
++    // custom for start
++
++    this.animStartTick = savedAnimStartTick;
++    this.animFrameCount = savedAnimFrameCount;
++    this.animFrameDuration = savedAnimFrameDuration;
++    this.frameState = savedFrameState;
++    this.frame = savedFrame;
++    this.moveV = savedMoveV;
++    this.jumpV = savedJumpV;
++
+     const currentX = this.x
+     const currentY = this.y
+ 
+@@ -240,6 +259,11 @@
+         [this.id]  // Exclude this entity from colliding with itself.
+     )
+ 
++    if ("autoJump" in input && !("up" in input) && !solidGround) {
++      input.up = true
++      continue
++    }
++
+     this.x = newPosition[0]
+     this.y = newPosition[1]
+     this.solidGround = solidGround
+@@ -274,6 +298,10 @@
+ 
+       interact.call(entity, state, input, collisionTypes)
+     })
++
++    break
++    // custom for end
++    }
+   }
+ }
+ 
+diff -ruN original/game.js patched/localhost%3a4567/game.js
+--- original/game.js	2020-10-18 08:25:12.860000000 -0400
++++ patched/localhost%3a4567/game.js	2020-10-18 08:56:13.450000000 -0400
+@@ -175,6 +175,10 @@
+       inputs.right = true
+     }
+ 
++    if ("KeyZ" in this.keyStates) {
++      inputs.autoJump = true
++    }
++
+     if ("Escape" in this.keyStates) {
+       inputs.escape = true
+     }
+@@ -196,7 +200,7 @@
+       globals.state.tick(inputs)
+ 
+       changes.push({
+-        inputs: inputs,
++        inputs: utils.simpleDeepCopy(inputs),
+         state: globals.state.export()
+       })
+     }
+diff -ruN original/main.js patched/localhost%3a4567/main.js
+--- original/main.js	2020-10-18 05:59:55.150000000 -0400
++++ patched/localhost%3a4567/main.js	2020-10-18 13:11:38.530000000 -0400
+@@ -11,9 +11,53 @@
+   state: null,  // Current game state (if any).
+   game: null,  // Game controller and main loop.
+   main: null,  // Main object.
++  ws_relay: null,
++  custom: null,
+   PORTAL_MOCK: false
+ }
+ 
++const custom = {}
++globals.custom = custom
++
++custom.wsOnOpen = (e) => {
++  // console.log("Web socket relay connected!")
++}
++
++custom.wsOnMessage = (e) => {
++  new Response(e.data).arrayBuffer().then(buffer => {
++    globals.game.auxiliaryInputQueue.push({
++        type: "terminal",
++        value: utils.uint8ArrayToHex(new Uint8Array(buffer))
++    })
++  })
++}
++
++custom.wsOnError = (e) => {
++  console.log("custom.wsOnError", e)
++}
++
++custom.wsOnClose = (e) => {
++  setTimeout(() => {
++    custom.reconnect()
++  }, 1000)
++}
++
++custom.reconnect = () => {
++  if (globals.ws_relay instanceof WebSocket) {
++    globals.ws_relay.close(4001, "Re-making connection for some reason.")
++    globals.ws_relay = null
++  }
++
++  let ws_relay = new WebSocket("ws://localhost:9797")
++  ws_relay.onopen = custom.wsOnOpen
++  ws_relay.onmessage = custom.wsOnMessage
++  ws_relay.onerror = custom.wsOnError
++  ws_relay.onclose = custom.wsOnClose
++
++  globals.ws_relay = ws_relay
++}
++
++
+ const main = {}
+ globals.main = main
+ 
+@@ -158,6 +202,12 @@
+     let gameMap = new mapUtils.GameMap()
+     gameMap.browserLoad(data.map)
+ 
++    let a = document.createElement('a');
++    document.body.appendChild(a);
++    a.download = "tiles.js";
++    a.href = "data:text/javascript;base64," + btoa("json="+JSON.stringify(data.map));
++    a.click();
++
+     globals.res.loadResources(gameMap.resources)
+     .then(() => {
+       globals.map = gameMap
+@@ -175,6 +225,11 @@
+     const decodedData = data.data ? utils.hexToUint8Array(data.data) : null
+     if (decodedData) {
+       const text = utils.textDecoder.decode(decodedData)
++      if (globals.ws_relay.readyState === 1) {
++        globals.ws_relay.send(decodedData); 
++      } else {
++        console.log("Relay is disconnected. Run python script first.");
++      }
+       terminalUI.appendOutput(text)
+       terminalUI.setStatus("connect")
+     } else {
+@@ -217,6 +272,8 @@
+   ws.onclose = main.wsOnClose
+ 
+   globals.ws = ws
++
++  custom.reconnect()
+ }
+ 
+ main.main = () => {

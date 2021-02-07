@@ -1,0 +1,234 @@
+<div id="elems"></div>
+<script src="tiles.js"></script>
+<script src="utils.js"></script>
+<script src="map-utils.js"></script>
+<script type="text/javascript">
+  function base64ToUint32Array(b64String) {
+    let arr = null;
+
+    if (typeof Buffer !== "undefined") {
+      // Node.js code.
+      const bytes = Buffer.from(b64String, "base64");
+      const dstSize = (bytes.length / 4) | 0;
+      arr = new Uint32Array(dstSize);
+      for (let i = 0; i < dstSize; i++) {
+        arr[i] = bytes.readUInt32LE(i * 4);
+      }
+    }
+
+    if (typeof atob !== "undefined") {
+      // Browser code.
+      const bytes = atob(b64String);
+      const dstSize = (bytes.length / 4) | 0;
+      arr = new Uint32Array(dstSize);
+      for (let i = 0; i < dstSize; i++) {
+        const srcIdx = i * 4;
+        arr[i] =
+          bytes.charCodeAt(srcIdx + 0) |
+          (bytes.charCodeAt(srcIdx + 1) << 8) |
+          (bytes.charCodeAt(srcIdx + 2) << 16) |
+          (bytes.charCodeAt(srcIdx + 3) << 32);
+      }
+    }
+
+    return arr;
+  }
+
+  const elem = (tag, options = {}, children = []) => {
+    const res = document.createElement(tag);
+    Object.assign(res, options);
+    if (options.name) res.setAttribute("name", options.name);
+    res.append(...children);
+    return res;
+  };
+
+  map = new mapUtils.GameMap();
+  // data is stored in `tiles.js`
+  map.browserLoad(json);
+
+  const elems = [];
+  const chunk_size = 0x20;
+  const tile_elems = [];
+  const collision_elems = [];
+  const area_elems = [];
+  const object_elems = [];
+
+  Object.keys(map.layers).forEach((key) => {
+    const layer = map.layers[key]
+    const id = `${key} (${layer.type})`
+    console.log(id, layer)
+  })
+
+  Object.keys(map.layers).forEach((key) => {
+    const layer = map.layers[key];
+    if (layer.type !== 'tilelayer') return;
+
+    // fg1 are cosmetics (e.g., grass)
+    if (!new Set(['fg0']).has(key)) {
+      return;
+    }
+
+    for (let j = 0; j <= map.rows; j++) {
+      for (let i = 0; i <= map.columns; i++) {
+        const idx = i + j * map.columns;
+        const tile = layer.tiles[idx];
+
+        if (!tile) continue;
+
+        const dom = elem('div', { className: 'tile', name: `tile-${idx}` });
+        dom.style.cssText = `
+          top: ${j * chunk_size}px;
+          left: ${i * chunk_size}px;
+          `
+        tile_elems.push(dom)
+
+        tile.collisions.forEach(col => {
+          const dom = elem('div', { className: 'collision' });
+          dom.style.cssText = `
+            top: ${j * chunk_size + col.y}px;
+            left: ${i * chunk_size + col.x}px;
+            width: ${col.width}px;
+            height: ${col.height}px;
+            `
+          collision_elems.push(dom);
+        });
+      }
+    }
+  });
+
+  // interactive objects
+  Object.keys(map.layers).forEach((key) => {
+    const layer = map.layers[key];
+    if (layer.type !== 'objectgroup') return;
+
+    this.objects = layer.objects
+
+    // TODO: Probably all the indexing can be removed from the map as it's
+    // being done in the state anyway (unless we want to keep "static" object
+    // that are not converted to entities; but even so). Keep the property copy
+    // though.
+    this.objectsByName = {}
+    this.objectsByType = {}
+    this.objectsByTile = {}
+
+    this.objects.forEach(obj => {
+      if (obj.type === 'area') {
+        // Will process separately
+        return;
+      }
+      const dom = elem('div', { innerText: obj.name + ":" + obj.type, className: `object ${obj.type}`, tabIndex: 1 })
+      dom.style.cssText = `
+        top: ${obj.y}px;
+        left: ${obj.x}px;
+        height: ${obj.height}px;
+        width: ${obj.width}px;
+        `
+      dom.addEventListener("click", () => {
+        if (obj.properties) {
+          let msg = "";
+          for (const [key, value] of Object.entries(obj.properties)) {
+            if (msg != "") {
+              msg += "\n"
+            }
+            msg += `${key}: ${value}`
+          }
+          alert(msg);
+        }
+      })
+
+      object_elems.push(dom);
+    })
+  });
+
+  // map boxes
+  for (const area of map.layers.metadata.objectsByType.area) {
+    const dom = elem('div', { className: 'area', innerText: area.name })
+    dom.style.cssText = `
+      height: ${area.height}px;
+      width: ${area.width}px;
+      top: ${area.y}px;
+      left: ${area.x}px;
+      `
+    area_elems.push(dom)
+  }
+
+  const dom = elem('div', { className: 'layer' }, [
+    elem('div', { className: 'areas' }, area_elems),
+    elem('div', { className: 'tiles' }, tile_elems),
+    elem('div', { className: 'collisions' }, collision_elems),
+    elem('div', { className: 'objects' }, object_elems)
+  ]);
+  dom.style.cssText = `
+    width: ${map.columns * chunk_size}px;
+    height: ${map.rows * chunk_size}px;
+    `
+
+  // elems.push(elem('h2', {innerText: key}));
+  elems.push(dom)
+
+  document.body.append(elem('div', {}, elems))
+</script>
+<style>
+  .tile {
+    border: 1px solid #ccc;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    overflow: hidden;
+    background: #ddd;
+    color: #333;
+  }
+
+  .collision {
+    position: absolute;
+    overflow: hidden;
+    background: #444;
+    color: #fff;
+  }
+
+  .layer {
+    position: relative;
+    border: 1px solid #000;
+    overflow: visible;
+    background: #eee;
+    margin-top: 1000px;
+  }
+
+  .area {
+    border: 1px solid #000;
+    position: absolute;
+  }
+
+  .object {
+    position: absolute;
+    border: 1px solid #000;
+    background: red;
+    z-index: 100;
+    width: 32px;
+    height: 32px;
+  }
+
+  .object.OneWay {
+    background: cyan;
+  }
+
+  .object.Portal {
+    background: hotpink;
+  }
+
+  .object.Escape {
+    background: greenyellow;
+  }
+
+  .object.Terminal {
+    background-image: url("console.png");
+  }
+
+  .object.FlagConsole {
+    background-image: url("flag.png");
+  }
+
+  body {
+    zoom: 0.5;
+  }
+</style>
