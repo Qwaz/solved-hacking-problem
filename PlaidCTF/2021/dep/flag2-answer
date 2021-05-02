@@ -1,0 +1,13 @@
+Prop = #0
+Type = #1
+
+; FlagArgType = (p: Prop) => p
+
+; These two types are considered alpha-equivalent
+(y: Type) => (a: y) => (x: Prop) => x
+(x: Type) => (a: x) => (y: Prop) => x
+
+F = (f: (y: Type) => (a: y) => (x: Prop) => x) -> (f Prop ((A: Prop) => A))
+exploit = (F ((x: Type) -> (a: x) -> (y: Prop) -> a))
+
+(flag2 exploit)

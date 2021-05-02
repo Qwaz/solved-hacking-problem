@@ -1,0 +1,15 @@
+Prop = #0
+
+FlagArgType = (phi : Prop)
+    => (
+        _ : (
+            _ : (_ : phi)
+            => (p : Prop)
+            => p
+        )
+        => (p : Prop)
+        => p
+    )
+    => phi
+
+(f: FlagArgType) -> (_: Prop) -> (flag1 f)
