@@ -1,0 +1,815 @@
+
+loc_0:
+; XREFS FROM 0x400
+; XREFS FROM 0x420
+; XREFS FROM 0x4ec
+; XREFS FROM 0x670
+; XREFS FROM 0x7d4
+; XREFS FROM 0x844
+; XREFS FROM 0x84c
+; XREFS FROM 0x8bc
+; XREFS FROM 0x8d4
+; XREFS FROM 0x928
+; XREFS FROM 0x968
+push                 r1
+push                 r2
+push                 r3
+ldi                  r0, loc_24
+branch               r0
+pop                  r3
+pop                  r2
+pop                  r1
+
+loc_20:
+; XREFS FROM 0x6f0
+; XREFS FROM 0x754
+; XREFS FROM 0x7c4
+; XREFS FROM 0x808
+; XREFS FROM 0x880
+; XREFS FROM 0x948
+pop                  pc
+
+loc_24:
+; XREFS FROM 0xc
+push                 r1
+
+loc_28:
+; XREFS FROM 0x418
+; XREFS FROM 0x7b8
+; XREFS FROM 0x898
+; XREFS FROM 0x930
+push                 r2
+push                 r3
+
+loc_30:
+; XREFS FROM 0x824
+; XREFS FROM 0x8ac
+ldi                  r0, 0x980 ; "Welcome to the droid logging functionality.\n,"
+push                 r0
+ldi                  r0, 0x9ac ; =0x2c
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_54
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_54:
+; XREFS FROM 0x44
+pop                  r0
+pop                  r0
+ldi                  r0, 0x6c
+push                 r0
+ldi                  r0, loc_78
+branch               r0
+ldi                  r0, loc_74
+branch               r0
+
+loc_74:
+; XREFS FROM 0x6c
+syscall              5, r2
+
+loc_78:
+; XREFS FROM 0x64
+push                 r1
+push                 r2
+push                 r3
+
+loc_84:
+; XREFS FROM 0x13c
+; XREFS FROM 0x14c
+; XREFS FROM 0x15c
+ldi                  r0, 0x9b4 ; "Choose:\n(1) New log\n(2) List logs\n(3) View log\n(4) Quit\n8"
+push                 r0
+ldi                  r0, 0x9ec ; =0x38
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_a8
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_a8:
+; XREFS FROM 0x98
+pop                  r0
+pop                  r0
+ldi                  r0, 0x0
+ldi                  r1, 0x9f4
+ldi                  r2, 0x2
+syscall              1, r3
+ldi                  r0, 0x1
+add                  r1, r0
+ldi                  r0, 0x0
+str                  r1, r0
+ldi                  r1, 0x9f4
+load                 r1, r1
+ldi                  r0, loc_31
+cmp                  r0, r1
+ldi                  r0, func_add
+beq                  r0
+ldi                  r0, loc_32
+cmp                  r0, r1
+ldi                  r0, func_list
+beq                  r0
+ldi                  r0, loc_33
+cmp                  r0, r1
+ldi                  r0, func_view
+beq                  r0
+ldi                  r0, 0xa05 ; "So long\n\x08"
+push                 r0
+ldi                  r0, 0xa0d ; =0x8
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_12c
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_12c:
+; XREFS FROM 0x11c
+pop                  r1
+pop                  r2
+ldi                  r0, loc_16c
+branch               r0
+
+func_add:
+; XREFS FROM 0xe0
+ldi                  r0, loc_84
+push                 r0
+ldi                  r0, do_add
+branch               r0
+
+func_list:
+; XREFS FROM 0xf0
+ldi                  r1, loc_84
+push                 r1
+ldi                  r0, do_list
+branch               r0
+
+func_view:
+; XREFS FROM 0x100
+ldi                  r2, loc_84
+push                 r2
+ldi                  r2, do_view
+branch               r2
+
+loc_16c:
+; XREFS FROM 0x134
+pop                  r3
+pop                  r2
+pop                  r1
+pop                  pc
+
+do_add:
+; XREFS FROM 0x144
+push                 r1
+push                 r2
+push                 r3
+str                  sp, sp
+load                 r3, sp
+ldi                  r1, 0xa1d
+load                 r0, r1
+add                  sp, r0
+ldi                  r0, $log_count @ aaa
+load                 r0, r0
+ldi                  r1, 0xc2f ; =0x5
+load                 r1, r1
+cmp                  r0, r1
+ldi                  r0, loc_1dc
+bcc:1                r0
+ldi                  r0, 0xab2 ; "No space for more logs\n\x17"
+push                 r0
+ldi                  r0, 0xac9 ; =0x17
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_3b0
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_1dc:
+; XREFS FROM 0x1b0
+ldi                  r0, 0xa4d ; "What is the name of the log?\n\x1d"
+push                 r0
+ldi                  r0, 0xa6a ; =0x1d
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_200
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_200:
+; XREFS FROM 0x1f0
+pop                  r1
+pop                  r1
+ldi                  r0, 0xa2d ; =0x8
+load                 r0, r0
+add                  r0, sp
+ldi                  r1, 0x0
+add                  r1, r0
+ldi                  r0, 0x0
+push                 r0
+push                 r1
+ldi                  r0, 0xc4f ; =0x8
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_244
+push                 r0
+ldi                  r0, read_line
+branch               r0
+
+loc_244:
+; XREFS FROM 0x234
+pop                  r1
+pop                  r1
+pop                  r1
+ldi                  r1, 0xa35
+load                 r1, r1
+add                  r1, sp
+str                  r1, r0
+ldi                  r0, 0xa72 ; "What is the content of the log?\n "
+push                 r0
+ldi                  r0, 0xa92 ; =0x20
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_284
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_284:
+; XREFS FROM 0x274
+pop                  r1
+pop                  r1
+ldi                  r0, 0xa3d ; =0x18
+load                 r0, r0
+add                  r0, sp
+ldi                  r1, 0x0
+add                  r1, r0
+ldi                  r0, 0x0
+push                 r0
+push                 r1
+ldi                  r0, 0xa25 ; =0x20
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_2c8
+push                 r0
+ldi                  r0, read_line
+branch               r0
+
+loc_2c8:
+; XREFS FROM 0x2b8
+pop                  r1
+pop                  r1
+pop                  r1
+ldi                  r1, 0xa45 ; =0x10
+load                 r1, r1
+add                  r1, sp
+str                  r1, r0
+ldi                  r1, loc_a15
+load                 r1, r1
+ldi                  r0, 0xaaa
+load                 r0, r0
+push                 r0
+push                 r1
+ldi                  r0, loc_30c
+push                 r0
+ldi                  r0, multiply
+branch               r0
+
+loc_30c:
+; XREFS FROM 0x2fc
+pop                  r1
+pop                  r1
+ldi                  r1, 0xb18
+add                  r1, r0
+push                 r3
+ldi                  r3, 0x8
+add                  r3, sp
+load                 r2, r3
+str                  r1, r2
+ldi                  r0, 0x8
+add                  r1, r0
+add                  r3, r0
+load                 r2, r3
+str                  r1, r2
+add                  r1, r0
+add                  r3, r0
+load                 r2, r3
+str                  r1, r2
+add                  r1, r0
+add                  r3, r0
+load                 r2, r3
+str                  r1, r2
+add                  r1, r0
+add                  r3, r0
+load                 r2, r3
+str                  r1, r2
+add                  r1, r0
+add                  r3, r0
+load                 r2, r3
+str                  r1, r2
+add                  r1, r0
+add                  r3, r0
+load                 r2, r3
+str                  r1, r2
+pop                  r3
+ldi                  r0, 0xaaa
+load                 r0, r0
+ldi                  r1, loc_1
+add                  r1, r0
+ldi                  r0, 0xaaa
+str                  r0, r1
+
+loc_3b0:
+; XREFS FROM 0x1cc
+ldi                  sp, 0x0
+add                  sp, r3
+pop                  r3
+pop                  r2
+pop                  r1
+pop                  pc
+
+do_list:
+; XREFS FROM 0x154
+push                 r1
+push                 r2
+push                 r3
+ldi                  r0, 0xc41 ; "Logs:\n\x06"
+push                 r0
+ldi                  r0, loc_c47
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_3f8
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_3f8:
+; XREFS FROM 0x3e8
+pop                  r0
+pop                  r0
+ldi                  r1, loc_0
+
+loc_404:
+; XREFS FROM 0x524
+ldi                  r0, 0xaaa
+load                 r0, r0
+cmp                  r0, r1
+ldi                  r0, loc_52c
+beq                  r0
+ldi                  r0, loc_28
+push                 r0
+ldi                  r0, loc_0
+add                  r0, sp
+push                 r0
+ldi                  r0, 0x1
+push                 r0
+ldi                  r0, loc_444
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_444:
+; XREFS FROM 0x434
+pop                  r0
+pop                  r0
+pop                  r0
+ldi                  r0, loc_1
+add                  r0, r1
+push                 r0
+ldi                  r0, loc_46c
+push                 r0
+ldi                  r0, write_int
+branch               r0
+
+loc_46c:
+; XREFS FROM 0x45c
+pop                  r0
+ldi                  r0, 0xc37
+push                 r0
+ldi                  r0, loc_c39
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_494
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_494:
+; XREFS FROM 0x484
+pop                  r0
+pop                  r0
+ldi                  r0, 0xa15 ; =0x38
+load                 r0, r0
+push                 r1
+push                 r0
+ldi                  r0, loc_4bc
+push                 r0
+ldi                  r0, multiply
+branch               r0
+
+loc_4bc:
+; XREFS FROM 0x4ac
+pop                  r2
+pop                  r2
+ldi                  r2, 0xb18
+add                  r2, r0
+push                 r2
+ldi                  r0, 0x4e0
+push                 r0
+ldi                  r0, loc_6e4
+branch               r0
+pop                  r0
+ldi                  r0, loc_a
+push                 r0
+ldi                  r0, loc_0
+add                  r0, sp
+push                 r0
+ldi                  r0, 0x1
+push                 r0
+ldi                  r0, loc_510
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_510:
+; XREFS FROM 0x500
+pop                  r0
+pop                  r0
+pop                  r0
+ldi                  r0, 0x1
+add                  r1, r0
+ldi                  r0, loc_404
+branch               r0
+
+loc_52c:
+; XREFS FROM 0x410
+pop                  r3
+pop                  r2
+pop                  r1
+pop                  pc
+
+do_view:
+; XREFS FROM 0x164
+push                 r1
+push                 r2
+push                 r3
+ldi                  r0, 0xad1 ; "What is the log number?\n\x18"
+push                 r0
+ldi                  r0, loc_ae9
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_56c
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_56c:
+; XREFS FROM 0x55c
+pop                  r0
+pop                  r0
+ldi                  r0, 0x0
+ldi                  r1, 0x9f4
+ldi                  r2, loc_2
+syscall              1, r3
+ldi                  r0, loc_1
+add                  r1, r0
+ldi                  r0, 0x0
+str                  r1, r0
+ldi                  r1, 0x9f4
+load                 r1, r1
+ldi                  r0, loc_a9a
+load                 r0, r0
+add                  r1, r0
+ldi                  r0, loc_aa2
+load                 r0, r0
+add                  r1, r0
+ldi                  r0, 0x0
+cmp                  r1, r0
+ldi                  r0, loc_6a8
+bcc:1                r0
+ldi                  r0, $log_count @ aaa
+load                 r0, r0
+cmp                  r1, r0
+ldi                  r0, loc_6a8
+bcc:2                r0
+beq                  r0
+ldi                  r0, loc_a15
+load                 r0, r0
+push                 r1
+push                 r0
+ldi                  r0, loc_5fc
+push                 r0
+ldi                  r0, multiply
+branch               r0
+
+loc_5fc:
+; XREFS FROM 0x5ec
+pop                  r1
+pop                  r1
+ldi                  r1, loc_b18
+add                  r1, r0
+push                 r1
+ldi                  r0, loc_620
+push                 r0
+ldi                  r0, loc_6e4
+branch               r0
+
+loc_620:
+; XREFS FROM 0x610
+pop                  r0
+ldi                  r0, 0xb0e
+push                 r0
+ldi                  r0, loc_b10
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_648
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_648:
+; XREFS FROM 0x638
+pop                  r0
+pop                  r0
+push                 r1
+ldi                  r0, 0x664
+push                 r0
+ldi                  r0, loc_748
+branch               r0
+pop                  r0
+ldi                  r0, loc_a
+push                 r0
+ldi                  r0, loc_0
+add                  r0, sp
+push                 r0
+ldi                  r0, 0x1
+push                 r0
+ldi                  r0, loc_694
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_694:
+; XREFS FROM 0x684
+pop                  r0
+pop                  r0
+pop                  r0
+ldi                  r0, loc_6d4
+branch               r0
+
+loc_6a8:
+; XREFS FROM 0x5bc
+; XREFS FROM 0x5d0
+ldi                  r0, 0xaf1 ; "Cannot find that log\n\x15"
+push                 r0
+ldi                  r0, loc_b06
+load                 r0, r0
+push                 r0
+ldi                  r0, loc_6cc
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_6cc:
+; XREFS FROM 0x6bc
+pop                  r0
+pop                  r0
+
+loc_6d4:
+; XREFS FROM 0x6a0
+pop                  r3
+pop                  r2
+pop                  r1
+pop                  pc
+
+loc_6e4:
+; XREFS FROM 0x4d8
+; XREFS FROM 0x618
+push                 r1
+push                 r2
+push                 r3
+ldi                  r0, loc_20
+add                  r0, sp
+load                 r2, r0
+ldi                  r0, 0xa2d ; =0x8
+load                 r0, r0
+add                  r0, r2
+ldi                  r3, 0xa35
+load                 r3, r3
+add                  r3, r2
+push                 r0
+load                 r3, r3
+push                 r3
+ldi                  r0, loc_730
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_730:
+; XREFS FROM 0x720
+pop                  r0
+pop                  r0
+pop                  r3
+pop                  r2
+pop                  r1
+pop                  pc
+
+loc_748:
+; XREFS FROM 0x65c
+push                 r1
+push                 r2
+push                 r3
+ldi                  r0, loc_20
+add                  r0, sp
+load                 r2, r0
+ldi                  r0, 0xa3d ; =0x18
+load                 r0, r0
+add                  r0, r2
+ldi                  r3, 0xa45 ; =0x10
+load                 r3, r3
+add                  r3, r2
+push                 r0
+load                 r3, r3
+push                 r3
+ldi                  r0, loc_794
+push                 r0
+ldi                  r0, write_str
+branch               r0
+
+loc_794:
+; XREFS FROM 0x784
+pop                  r0
+pop                  r0
+pop                  r3
+pop                  r2
+pop                  r1
+pop                  pc
+
+write_str:
+; XREFS FROM 0x4c
+; XREFS FROM 0xa0
+; XREFS FROM 0x124
+; XREFS FROM 0x1d4
+; XREFS FROM 0x1f8
+; XREFS FROM 0x27c
+; XREFS FROM 0x3f0
+; XREFS FROM 0x43c
+; XREFS FROM 0x48c
+; XREFS FROM 0x508
+; XREFS FROM 0x564
+; XREFS FROM 0x640
+; XREFS FROM 0x68c
+; XREFS FROM 0x6c4
+; XREFS FROM 0x728
+; XREFS FROM 0x78c
+push                 r1
+push                 r2
+push                 r3
+ldi                  r0, loc_28
+add                  r0, sp
+load                 r1, r0
+ldi                  r0, loc_20
+add                  r0, sp
+load                 r3, r0
+push                 r3
+ldi                  r3, loc_0
+add                  r3, sp
+ldi                  r0, loc_1
+load                 r2, r3
+syscall              3, r1
+pop                  r0
+pop                  r3
+pop                  r2
+pop                  r1
+pop                  pc
+
+write_int:
+; XREFS FROM 0x464
+push                 r1
+push                 r2
+push                 r3
+ldi                  r0, loc_20
+add                  r0, sp
+load                 r1, r0
+ldi                  r0, 0x9
+cmp                  r1, r0
+ldi                  r0, loc_838
+bcc:2                r0
+ldi                  r2, loc_30
+add                  r2, r1
+ldi                  r3, loc_1
+ldi                  r0, loc_840
+branch               r0
+
+loc_838:
+; XREFS FROM 0x81c
+ldi                  r2, 0x3031 ; ""
+ldi                  r3, loc_2
+
+loc_840:
+; XREFS FROM 0x830
+push                 r2
+ldi                  r1, loc_0
+add                  r1, sp
+ldi                  r2, loc_0
+add                  r2, r3
+ldi                  r0, loc_1
+syscall              3, r1
+pop                  r0
+pop                  r3
+pop                  r2
+pop                  r1
+pop                  pc
+
+read_line:
+; XREFS FROM 0x23c
+; XREFS FROM 0x2c0
+push                 r1
+push                 r2
+push                 r3
+ldi                  r3, 0x0
+
+loc_880:
+; XREFS FROM 0x8fc
+ldi                  r0, loc_20
+add                  r0, sp
+load                 r1, r0
+cmp                  r3, r1
+ldi                  r0, loc_904
+beq                  r0
+ldi                  r0, loc_28
+add                  r0, sp
+load                 r1, r0
+add                  r1, r3
+ldi                  r2, 0x1
+ldi                  r0, loc_30
+add                  r0, sp
+load                 r0, r0
+syscall              1, r0
+ldi                  r0, loc_0
+push                 r0
+load                 r0, r1
+push                 r0
+ldi                  r0, loc_1
+add                  r0, sp
+ldi                  r2, loc_0
+str                  r0, r2
+pop                  r1
+pop                  r0
+ldi                  r0, loc_a
+cmp                  r0, r1
+ldi                  r0, loc_904
+beq                  r0
+ldi                  r0, 0x1
+add                  r3, r0
+ldi                  r0, loc_880
+branch               r0
+
+loc_904:
+; XREFS FROM 0x890
+; XREFS FROM 0x8ec
+push                 r3
+pop                  r0
+pop                  r3
+pop                  r2
+pop                  r1
+pop                  pc
+
+multiply:
+; XREFS FROM 0x304
+; XREFS FROM 0x4b4
+; XREFS FROM 0x5f4
+push                 r1
+push                 r2
+push                 r3
+ldi                  r3, loc_0
+ldi                  r2, 0x0
+
+loc_930:
+; XREFS FROM 0x960
+ldi                  r0, loc_28
+add                  r0, sp
+load                 r1, r0
+cmp                  r3, r1
+ldi                  r0, loc_968
+beq                  r0
+ldi                  r0, loc_20
+add                  r0, sp
+load                 r1, r0
+add                  r2, r1
+ldi                  r0, 0x1
+add                  r3, r0
+ldi                  r0, loc_930
+branch               r0
+
+loc_968:
+; XREFS FROM 0x940
+ldi                  r0, loc_0
+add                  r0, r2
+pop                  r3
+pop                  r2
+pop                  r1
+pop                  pc
