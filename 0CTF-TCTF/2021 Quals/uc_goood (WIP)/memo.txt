@@ -1,0 +1,193 @@
+1 page = 4 KiB = 4096
+4096 / 8 = 512 entry
+
+9 bit -> 512
+
+
+0xdeadbeef000 -> 0xdeadbef0000
+0xdeadbef0000 -> 0xdeadbef0000
+0xdeadbef1000 -> 0xdeadbef1000
+0xbabecafe000 -> 0xbabecafe000
+
+0xdeadbeef000
+000011011 110101011 011011111 011101111 000000000000
+
+0xdeadbf00000
+000011011 110101011 011011111 100000000 000000000000
+
+0xdeadbef1000
+000011011 110101011 011011111 011110001 000000000000
+
+0xbabecafe000
+000010111 010101111 101100101 011111110 000000000000
+
+
+# Code pages
+PT = STACK
+
+PT + 8 * 000011011 (0x00d8) -> PT
+PT + 8 * 110101011 (0x0d58) -> PT
+PT + 8 * 011011111 (0x06f8) -> PT
+
+PT + 8 * 011101111 (0x0778) -> 0xdeadbef0000
+PT + 8 * 100000000 (0x0800) -> 0xdeadbef0000
+PT + 8 * 011110001 (0x0788) -> 0xdeadbef1000
+
+# Stack page
+PT + 8 * 000010111 (0x00b8) -> PT
+PT + 8 * 010101111 (0x0578) -> PT
+PT + 8 * 101100101 (0x0b28) -> PT
+
+PT + 8 * 011111110 (0x07f0) -> 0xbabecafe000 (Stack)
+
+
+# Unused
+/* Set PAE */
+mov %cr4, %rax
+bts $5, %rax
+mov %rax, %cr4
+
+/* Enable EFER (idk what it is) */
+mov $0x0c0000080, %ecx
+rdmsr
+btc $8, %eax
+wrmsr
+
+
+# Admin gadgets
+========== INDEX 0 ==========
+   0:   6d                      ins    DWORD PTR es:[rdi], dx
+   1:   70 6f                   jo     0x72
+   3:   72 74                   jb     0x79
+   5:   61                      (bad)  
+   6:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   7:   74 20                   je     0x29
+   9:   74                      .byte 0x74
+========== INDEX 1 ==========
+   0:   70 6f                   jo     0x71
+   2:   72 74                   jb     0x78
+   4:   61                      (bad)  
+   5:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   6:   74 20                   je     0x28
+   8:   74 68                   je     0x72
+========== INDEX 2 ==========
+   0:   6f                      outs   dx, DWORD PTR ds:[rsi]
+   1:   72 74                   jb     0x77
+   3:   61                      (bad)  
+   4:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   5:   74 20                   je     0x27
+   7:   74 68                   je     0x71
+   9:   61                      (bad)
+========== INDEX 3 ==========
+   0:   72 74                   jb     0x76
+   2:   61                      (bad)  
+   3:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   4:   74 20                   je     0x26
+   6:   74 68                   je     0x70
+   8:   61                      (bad)  
+   9:   6e                      outs   dx, BYTE PTR ds:[rsi]
+========== INDEX 4 ==========
+   0:   74 61                   je     0x63
+   2:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   3:   74 20                   je     0x25
+   5:   74 68                   je     0x6f
+   7:   61                      (bad)  
+   8:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   9:   20                      .byte 0x20
+========== INDEX 5 ==========
+   0:   61                      (bad)  
+   1:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   2:   74 20                   je     0x24
+   4:   74 68                   je     0x6e
+   6:   61                      (bad)  
+   7:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   8:   20                      .byte 0x20
+   9:   6b                      .byte 0x6b
+========== INDEX 6 ==========
+   0:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   1:   74 20                   je     0x23
+   3:   74 68                   je     0x6d
+   5:   61                      (bad)  
+   6:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   7:   20 6b 6e                and    BYTE PTR [rbx+0x6e], ch
+========== INDEX 7 ==========
+   0:   74 20                   je     0x22
+   2:   74 68                   je     0x6c
+   4:   61                      (bad)  
+   5:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   6:   20 6b 6e                and    BYTE PTR [rbx+0x6e], ch
+   9:   6f                      outs   dx, DWORD PTR ds:[rsi]
+========== INDEX 8 ==========
+   0:   20 74 68 61             and    BYTE PTR [rax+rbp*2+0x61], dh
+   4:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   5:   20 6b 6e                and    BYTE PTR [rbx+0x6e], ch
+   8:   6f                      outs   dx, DWORD PTR ds:[rsi]
+   9:   77                      .byte 0x77
+========== INDEX 9 ==========
+   0:   74 68                   je     0x6a
+   2:   61                      (bad)  
+   3:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   4:   20 6b 6e                and    BYTE PTR [rbx+0x6e], ch
+   7:   6f                      outs   dx, DWORD PTR ds:[rsi]
+   8:   77 6c                   ja     0x76
+========== INDEX 10 ==========
+   0:   68 61 6e 20 6b          push   0x6b206e61
+   5:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   6:   6f                      outs   dx, DWORD PTR ds:[rsi]
+   7:   77 6c                   ja     0x75
+   9:   65                      gs
+========== INDEX 11 ==========
+   0:   61                      (bad)  
+   1:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   2:   20 6b 6e                and    BYTE PTR [rbx+0x6e], ch
+   5:   6f                      outs   dx, DWORD PTR ds:[rsi]
+   6:   77 6c                   ja     0x74
+   8:   65                      gs
+   9:   64                      fs
+========== INDEX 12 ==========
+   0:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   1:   20 6b 6e                and    BYTE PTR [rbx+0x6e], ch
+   4:   6f                      outs   dx, DWORD PTR ds:[rsi]
+   5:   77 6c                   ja     0x73
+   7:   65                      gs
+   8:   64                      fs
+   9:   67                      addr32
+========== INDEX 13 ==========
+   0:   20 6b 6e                and    BYTE PTR [rbx+0x6e], ch
+   3:   6f                      outs   dx, DWORD PTR ds:[rsi]
+   4:   77 6c                   ja     0x72
+   6:   65                      gs
+   7:   64                      fs
+   8:   67                      addr32
+   9:   65                      gs
+========== INDEX 14 ==========
+   0:   6b 6e 6f 77             imul   ebp, DWORD PTR [rsi+0x6f], 0x77
+   4:   6c                      ins    BYTE PTR es:[rdi], dx
+   5:   65                      gs
+   6:   64                      fs
+   7:   67                      addr32
+   8:   65                      gs
+   9:   2e                      cs
+========== INDEX 15 ==========
+   0:   6e                      outs   dx, BYTE PTR ds:[rsi]
+   1:   6f                      outs   dx, DWORD PTR ds:[rsi]
+   2:   77 6c                   ja     0x70
+   4:   65 64 67 65 2e 27       gs fs addr32 gs cs (bad)
+========== INDEX 16 ==========
+   0:   6f                      outs   dx, DWORD PTR ds:[rsi]
+   1:   77 6c                   ja     0x6f
+   3:   65 64 67 65 2e 27       gs fs addr32 gs cs (bad) 
+        ...
+========== INDEX 17 ==========
+   0:   77 6c                   ja     0x6e
+   2:   65 64 67 65 2e 27       gs fs addr32 gs cs (bad) 
+   8:   00                      .byte 0x0
+   9:   48                      rex.W
+========== INDEX 18 ==========
+   0:   6c                      ins    BYTE PTR es:[rdi], dx
+   1:   65 64 67 65 2e 27       gs fs addr32 gs cs (bad) 
+   7:   00 48 89                add    BYTE PTR [rax-0x77], cl
+========== INDEX 19 ==========
+   0:   65 64 67 65 2e 27       gs fs addr32 gs cs (bad) 
+   6:   00 48 89                add    BYTE PTR [rax-0x77], cl
+   9:   f8                      clc
