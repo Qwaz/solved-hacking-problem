@@ -1,0 +1,9 @@
+XOR with "Reese's"
+
+The 4th byte of the password is: 0x35
+
+
+If you are not good in maths, the only thing that can save you is to be a bash expert. Otherwise you will be locked here forever HA HA HA!
+
+
+Are you good at maths? We love maths at FLARE! We use this formula a lot to decode bytes: "ENCODED_BYTE + 27 + NUMBER1 * NUMBER2 - NUMBER3"

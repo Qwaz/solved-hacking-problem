@@ -1,0 +1,21 @@
+Add 252
+
+The only problem with RC4 is that you need a key. The FLARE team normally uses this number: "SREFBE" (as an UTF-8 string). If you have no idea what that means, you should give up and bake some muffins.
+
+
+The 5th byte of the password is: 0xMS
+
+
+If this challenge is too difficult and you want to give up or just in case you got hungry, what about baking some muffins? Try this recipe:
+0 - Cinnamon
+1 - Butter 150gr
+2 - Lemon 1/2
+3 - Eggs 3
+4 - Sugar 150gr
+5 - Flour 250gr
+6 - Milk 30gr
+7 - Icing sugar 10gr
+8 - Apple 100gr
+9 - Raspberries 100gr
+
+Mix 0 to 9 and bake for 30 minutes at 180°C.

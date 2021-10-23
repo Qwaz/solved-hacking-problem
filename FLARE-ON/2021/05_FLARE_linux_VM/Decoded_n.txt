@@ -1,0 +1,7 @@
+Solved with XOR guessing
+
+Do you know natillas? In Spain, this term refers to a custard dish made with milk and eggs,
+
+The 6th byte of the password is: 0x36
+
+In the FLARE team we really like Felix Delastelle algorithms, specially the one which MMSF

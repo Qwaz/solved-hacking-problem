@@ -1,0 +1,9 @@
+Plaintext
+
+"ugali", "unagi" and "udon noodles" are delicious. What a coincidence that all of them start by "u"!
+
+
+Ugali with Sausages or Spaghetti is tasty. It doesn’t matter if you rotate it left or right, it is still tasty! You should try to come up with a great recipe using CyberChef.
+
+
+The 1st byte of the password is 0x45

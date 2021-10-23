@@ -1,0 +1,89 @@
+# Script 1
+part1$='derelict:MZZWP'
+PluginSet("PlugIn","part1$")
+# Script 2
+part2$='lagan:BAJkR'
+PluginSet("PlugIn","part2$")
+# Script 3
+part2$='flotsam:DFWEyEW'
+PluginSet("PlugIn","part2$")
+# Script 4
+part1$='flotsam:PXopvM'
+PluginSet("PlugIn","part1$")
+# Script 5
+part2$='derelict:LDNCVYU'
+PluginSet("PlugIn","part2$")
+# Script 6
+part3$='derelict:yXQsGB'
+PluginSet("PlugIn","part3$")
+# Script 7
+part2$='jetsam:newaui'
+PluginSet("PlugIn","part2$")
+# Script 8
+part3$='lagan:QICMX'
+PluginSet("PlugIn","part3$")
+# Script 9
+part1$='lagan:rOPFG'
+PluginSet("PlugIn","part1$")
+# Script 10
+part3$='jetsam:HwdwAZ'
+PluginSet("PlugIn","part3$")
+# Script 11
+part1$='jetsam:SLdkv'
+PluginSet("PlugIn","part1$")
+# Script 12
+part2$='derelict:LSZvYSFHW'
+PluginSet("PlugIn","part2$")
+# Script 13
+part3$='flotsam:BGgsuhn'
+PluginSet("PlugIn","part3$")
+# Script 14
+part4$='lagan:GTYAKlwER'
+PluginSet("PlugIn","part2$")
+# Script 15
+part4$='derelict:RTYXAc'
+PluginSet("PlugIn","part4$")
+# Script 16
+part2$='lagan:GTXI'
+PluginSet("PlugIn","part2$")
+# Script 17
+PluginRun("PlugIn","PluginFunc19")
+PluginGet("PlugIn","var1$")
+NextPage()
+LoadVariable("visitors","count")
+count = count + 1
+SaveVariable("visitors","count")
+vc$='Visitor Counter: ' + CHAR(count)
+CreateText("mytext","visitlabel$,1050,580,yippy")
+LoadText("visitlabel$","vc$")
+colr$='TEXTCOLOR=255,0,0'
+SetObjectParam("outlabel$","colr$")
+SetObjectParam("outlabel$","FONTNAME=Comic Sans MS")
+SetObjectParam("outlabel$","FONTSIZE=24")
+colors$[1] = '255,0,0'
+colors$[2] = '0,255,0'
+colors$[3] = '0,0,255'
+colors$[4] = '255,0,0'
+colors$[5] = '0,255,0'
+colors$[6] = '0,0,255'
+colors$[7] = '255,0,0'
+colors$[8] = '0,255,0'
+colors$[9] = '0,0,255'
+colors$[10] = '255,0,0'
+colors$[11] = '0,255,0'
+colors$[12] = '0,0,255'
+colors$[13] = '255,0,0'
+colors$[14] = '0,255,0'
+colors$[15] = '0,0,255'
+For Loop= 1 To 1000
+  For Counter= 1 To 15
+    CreateText("mytext","outlabel$,20,100 + 50 * Counter,yippy")
+    LoadText("outlabel$","var1$")
+    colr$='TEXTCOLOR='+colors$[Counter]
+    SetObjectParam("outlabel$","colr$")
+    SetObjectParam("outlabel$","FONTNAME=Comic Sans MS")
+    SetObjectParam("outlabel$","FONTSIZE=48")
+    Pause("1000")
+    DeleteObject("outlabel$")
+  Next Counter
+Next Loop

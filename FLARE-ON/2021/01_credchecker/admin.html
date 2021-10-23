@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin-top: 20px;
+  background: #00008C;
+  color: #ffff00;
+  font-size: 11pt;
+  font-family: monospace;
+}
+
+/* Style all input fields */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+#winner {
+  display:none;
+  font-size: 14pt; 
+}
+
+#final_flag {
+  color: cyan;
+  font-size: 18pt;
+  font-style: bold;
+}
+
+</style>
+</head>
+<body>
+<div class="content" id="banner">
+<img id="logo" src="img/logo.png" alt="Flare-On 8">
+<h3>Administrator Verification Form</h3>
+<p">Enter your flare-on administrator credentials in this secure form to securely verify your security level. This is an official request and compliance is manditory.</p>
+</div>
+
+<div class="content" id="formdiv">
+  <form id="credform">
+    <label for="usrname">Username</label>
+    <input type="text" id="usrname" name="usrname" onchange="dataEntered()">
+    <label for="psw">Password</label>
+    <input type="password" id="psw" name="psw" onkeydown="dataEntered()" onchange="dataEntered()">
+  </form>
+  	<button id="checkbtn" disabled="true" onclick="checkCreds()">Check Credentials</button>
+</div>
+
+<div class="content" id="message">
+  <h3>Password must contain the following:</h3>
+  <p class="invalid">The correct password</p>
+  <p class="invalid">Not an incorrect password</p>
+  <p>If you continue to fail, please ask your parents if it is too late to change your major</p>
+</div>
+
+<div class="content" id="winner">
+<img src="img/goldenticket.png" alt="A Golden Ticket">
+Welcome to Flare-On 8 here is your first flag:<br>
+<label id="final_flag">flag goes here</label>
+</div>
+	
+<script>
+var form = document.getElementById("credform");
+var username = document.getElementById("usrname");
+var password = document.getElementById("psw");
+var info = document.getElementById("infolabel");
+var checkbtn = document.getElementById("checkbtn");
+var encoded_key = "P1xNFigYIh0BGAofD1o5RSlXeRU2JiQQSSgCRAJdOw=="
+
+function dataEntered() {
+	if (username.value.length > 0 && password.value.length > 0) {
+		checkbtn.disabled = false;
+	} else {
+		checkbtn.disabled = true;
+	}
+}
+
+function checkCreds() {
+	if (username.value == "Admin" && atob(password.value) == "goldenticket") 
+	{
+		var key = atob(encoded_key);
+		var flag = "";
+		for (let i = 0; i < key.length; i++)
+		{
+			flag += String.fromCharCode(key.charCodeAt(i) ^ password.value.charCodeAt(i % password.value.length))
+		}
+		document.getElementById("banner").style.display = "none";
+		document.getElementById("formdiv").style.display = "none";
+		document.getElementById("message").style.display = "none";
+		document.getElementById("final_flag").innerText = flag;
+		document.getElementById("winner").style.display = "block";
+	}
+	else
+	{
+		document.getElementById("message").style.display = "block";
+	}
+}
+
+</script>
+
+</body>
+</html>

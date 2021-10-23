@@ -1,0 +1,13 @@
+AES-CBC with "Sheep should sleep in a shed15.2" as key and "PIZZA00000000000" as IV
+
+Woow! It seems you are very very close to get the flag! Be careful when converting decimal and hexadecimal values to ASCII and hurry up before we run out of tacos!
+
+
+The 9th byte of the password is the atomic number of the element moscovium
+The 10th byte of the password is the bell number preceding 203
+The 12th byte of the password is the largest known number to be the sum of two primes in exactly two different ways
+The 14th (and last byte) of the password is the sum of the number of participants from Spain, Singapore and Indonesia that finished the FLARE-ON 7, FLARE-ON 6 or FLARE-ON 5
+
+It seems you are close to escape... We are preparing the tomatoes to throw at you when you open the door! It is only a joke...
+The 11th byte of the password is the number of unique words in /etc/Quijote.txt
+The 13th byte of the password is revealed by the FLARE alias

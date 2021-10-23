@@ -1,0 +1,9 @@
+Base64
+
+The 3rd byte of the password is.. it is a joke, we don't like raisins!
+
+
+The 3rd byte of the password is: 0x51
+
+
+We LOVE "Reese's", they are great for everything! They are amazing in ice-cream and they even work as a key for XOR encoding.

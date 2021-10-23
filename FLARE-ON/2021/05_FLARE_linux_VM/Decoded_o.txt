@@ -1,0 +1,12 @@
+Vigenere encode with key OSYJMEAFWIOSYJMEAFWI
+
+You should follow the FLARE team in Twitter. Otherwise they may get angry and not let you leave even if you get the flag.
+https://twitter.com/anamma_06
+https://twitter.com/osardar1
+https://twitter.com/MalwareMechanic
+
+The 8th byte of the password is: 0x60
+
+You should follow the FLARE team in Twitter. They post a bunch of interesting stuff and have great conversation on Twitter!
+https://twitter.com/anamma_06
+https://twitter.com/MalwareMechanic

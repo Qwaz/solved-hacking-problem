@@ -1,0 +1,9 @@
+Rotate Left
+
+The 2st byte of the password is 0x34
+
+
+In the FLARE language "spaghetti" is "c3BhZ2hldHRp".
+
+
+In the FLARE team we like to speak in code. You should learn our language, otherwise you want be able to speak with us when you escape (if you manage to escape!). For example, instead of "strawberries" we say "c3RyYXdiZXJyaWVz".

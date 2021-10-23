@@ -1,0 +1,12 @@
+/
+[U]don noodles
+[S]trawberries
+[R]eese's
+/
+[B]anana chips
+[I]ce Cream
+[N]atillas
+/
+[D]onuts
+[O]melettes
+[T]acos

@@ -1,0 +1,10 @@
+Suspicious Function: 0x140002CB0
+
+bu ntdll!NtDelayExecution
+bu spel+0x17972f
+
+p
+bp @rip+0x9f6
+pa @rip+0x952
+
+bu 0x180001045
