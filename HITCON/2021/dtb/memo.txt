@@ -1,0 +1,26 @@
+and also phys + 0xFFFF000000000000 exists in virtual address
+flag is at 0xFFFF0000022EA360
+
+
+# initial initrd location
+0x48000000
+
+# kernel phys
+0x40200000
+
+
+# instruction flip
+0xFFFF800010CA9450
+0x40ea9450
+
+# led_values
+0xFFFF80001125D9E0
+0x4145d9e0
+
+
+led array
+0 - 0xFFFF80001125D9E0 - 0xFFFF8000115E342C (white)
+...
+9 - 0xFFFF80001125DA28 - 0xFFFF8000115A6147 (rgb)
+
+0x210 - 0xFFFF80001125EA60 - 0xFFFF8000115694C6 (bd)

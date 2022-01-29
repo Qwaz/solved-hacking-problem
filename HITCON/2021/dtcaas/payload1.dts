@@ -1,0 +1,6 @@
+/dts-v1/;
+
+/ {
+	p1 = /incbin/("/proc/self/cmdline");
+	p2 = /incbin/("/proc/self/maps");
+};
