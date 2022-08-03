@@ -1,0 +1,23 @@
+From 04fa9951f5107595d5bc6ed8fc95a499430b37b6 Mon Sep 17 00:00:00 2001
+From: Yechan Bae <yechan@gatech.edu>
+Date: Sun, 3 Jul 2022 03:56:48 -0400
+Subject: [PATCH] My Code
+
+---
+ src/BUILD.gn | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/BUILD.gn b/src/BUILD.gn
+index b82d588..228f88e 100644
+--- a/src/BUILD.gn
++++ b/src/BUILD.gn
+@@ -376,5 +376,6 @@ group("challenge") {
+   deps = [
+     "challenge:broker",
+     "challenge:flag_bearer",
++    "challenge:poc",
+   ]
+ }
+-- 
+2.25.1
+

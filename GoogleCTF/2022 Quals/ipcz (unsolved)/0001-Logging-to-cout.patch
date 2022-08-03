@@ -1,0 +1,35 @@
+From 02d7f3992c58458b590de483fe618635cc518c1b Mon Sep 17 00:00:00 2001
+From: Yechan Bae <yechan@gatech.edu>
+Date: Sun, 3 Jul 2022 09:05:20 -0400
+Subject: [PATCH] Logging to cout
+
+---
+ src/standalone/base/logging.cc | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/src/standalone/base/logging.cc b/src/standalone/base/logging.cc
+index 18432a5..5348e77 100644
+--- a/src/standalone/base/logging.cc
++++ b/src/standalone/base/logging.cc
+@@ -5,6 +5,7 @@
+ #include "standalone/base/logging.h"
+ 
+ #include <atomic>
++#include <algorithm>
+ #include <iostream>
+ 
+ #include "build/build_config.h"
+@@ -59,7 +60,9 @@ LogMessage::~LogMessage() {
+   absl::MutexLock lock(GetCerrMutex());
+ #endif
+ 
+-  std::cerr << stream_.str() << std::endl;
++  std::string s = stream_.str();
++  s.erase(std::remove(s.begin(), s.end(), '\x00'), s.end());
++  std::cout << s << std::endl;
+ }
+ 
+ void SetVerbosityLevel(int level) {
+-- 
+2.25.1
+
