@@ -1,0 +1,148 @@
+diff --git a/clambc/bcrun.c b/clambc/bcrun.c
+index 669df0a93..718fbc31d 100644
+--- a/clambc/bcrun.c
++++ b/clambc/bcrun.c
+@@ -402,6 +402,26 @@ int main(int argc, char *argv[])
+             fprintf(stderr, "Out of memory\n");
+             exit(3);
+         }
++        
++        if ((opt = optget(opts, "input"))->enabled) {
++            fd = open(opt->strarg, O_RDONLY | O_BINARY);
++            if (fd == -1) {
++                fprintf(stderr, "Unable to open input file %s: %s\n", opt->strarg, strerror(errno));
++                optfree(opts);
++                exit(5);
++            }
++            map = fmap(fd, 0, 0, opt->strarg);
++            if (!map) {
++                fprintf(stderr, "Unable to map input file %s\n", opt->strarg);
++                exit(5);
++            }
++            rc = cli_bytecode_context_setfile(ctx, map);
++            if (rc != CL_SUCCESS) {
++                fprintf(stderr, "Unable to set file %s: %s\n", opt->strarg, cl_strerror(rc));
++                optfree(opts);
++                exit(5);
++            }
++        }
+ 
+         // ctx was memset, so recursion_level starts at 0.
+         cctx.recursion_stack[cctx.recursion_level].fmap = map;
+@@ -416,6 +436,7 @@ int main(int argc, char *argv[])
+         dbg_state.col      = 0;
+         dbg_state.showline = !optget(opts, "no-trace-showsource")->enabled;
+         tracelevel         = optget(opts, "trace")->numarg;
++        printf("tracelevel %d\n", tracelevel);
+         cli_bytecode_context_set_trace(ctx, tracelevel,
+                                        tracehook,
+                                        tracehook_op,
+@@ -440,25 +461,6 @@ int main(int argc, char *argv[])
+             }
+         }
+ 
+-        if ((opt = optget(opts, "input"))->enabled) {
+-            fd = open(opt->strarg, O_RDONLY | O_BINARY);
+-            if (fd == -1) {
+-                fprintf(stderr, "Unable to open input file %s: %s\n", opt->strarg, strerror(errno));
+-                optfree(opts);
+-                exit(5);
+-            }
+-            map = fmap(fd, 0, 0, opt->strarg);
+-            if (!map) {
+-                fprintf(stderr, "Unable to map input file %s\n", opt->strarg);
+-                exit(5);
+-            }
+-            rc = cli_bytecode_context_setfile(ctx, map);
+-            if (rc != CL_SUCCESS) {
+-                fprintf(stderr, "Unable to set file %s: %s\n", opt->strarg, cl_strerror(rc));
+-                optfree(opts);
+-                exit(5);
+-            }
+-        }
+         /* for testing */
+         ctx->hooks.match_counts  = deadbeefcounts;
+         ctx->hooks.match_offsets = deadbeefcounts;
+diff --git a/libclamav/bytecode_vm.c b/libclamav/bytecode_vm.c
+index 74953c852..925cf0bb4 100644
+--- a/libclamav/bytecode_vm.c
++++ b/libclamav/bytecode_vm.c
+@@ -79,7 +79,7 @@ static inline int bcfail(const char *msg, long a, long b,
+ #define CHECK_EQ(a, b)
+ #define CHECK_GT(a, b)
+ #endif
+-#if 0 /* too verbose, use #ifdef CL_DEBUG if needed */
++#if 1 /* too verbose, use #ifdef CL_DEBUG if needed */
+ #define CHECK_UNREACHABLE                                \
+     do {                                                 \
+         cli_dbgmsg("bytecode: unreachable executed!\n"); \
+@@ -737,29 +737,29 @@ int cli_vm_execute(const struct cli_bc *bc, struct cli_bc_ctx *ctx, const struct
+         TRACE_INST(inst);
+ 
+         switch (inst->interp_op) {
+-            DEFINE_BINOP(OP_BC_ADD, res = op0 + op1);
+-            DEFINE_BINOP(OP_BC_SUB, res = op0 - op1);
+-            DEFINE_BINOP(OP_BC_MUL, res = op0 * op1);
++            DEFINE_BINOP(OP_BC_ADD, printf("%d + %d\n", op0, op1); res = op0 + op1);
++            DEFINE_BINOP(OP_BC_SUB, printf("%d - %d\n", op0, op1); res = op0 - op1);
++            DEFINE_BINOP(OP_BC_MUL, printf("%d * %d\n", op0, op1); res = op0 * op1);
+ 
+             DEFINE_BINOP(OP_BC_UDIV, CHECK_OP(op1 == 0, "bytecode attempted to execute udiv#0\n");
+-                         res = op0 / op1);
++                         printf("%d / %d\n", op0, op1); res = op0 / op1);
+             DEFINE_BINOP(OP_BC_SDIV, CHECK_OP(check_sdivops(sop0, sop1), "bytecode attempted to execute sdiv#0\n");
+-                         res = sop0 / sop1);
++                         printf("%d /s %d\n", op0, op1); res = sop0 / sop1);
+             DEFINE_BINOP(OP_BC_UREM, CHECK_OP(op1 == 0, "bytecode attempted to execute urem#0\n");
+-                         res = op0 % op1);
++                         printf("%d %% %d\n", op0, op1); res = op0 % op1);
+             DEFINE_BINOP(OP_BC_SREM, CHECK_OP(check_sdivops(sop0, sop1), "bytecode attempted to execute urem#0\n");
+-                         res = sop0 % sop1);
++                         printf("%d %%s %d\n", op0, op1); res = sop0 % sop1);
+ 
+             DEFINE_BINOP(OP_BC_SHL, CHECK_OP(op1 > inst->type, "bytecode attempted to execute shl greater than bitwidth\n");
+-                         res = op0 << op1);
++                         printf("%d << %d\n", op0, op1); res = op0 << op1);
+             DEFINE_BINOP(OP_BC_LSHR, CHECK_OP(op1 > inst->type, "bytecode attempted to execute lshr greater than bitwidth\n");
+-                         res = op0 >> op1);
++                         printf("%d >> %d\n", op0, op1); res = op0 >> op1);
+             DEFINE_BINOP(OP_BC_ASHR, CHECK_OP(op1 > inst->type, "bytecode attempted to execute ashr greater than bitwidth\n");
+-                         res = CLI_SRS(sop0, op1));
++                         printf("%d >>a %d\n", op0, op1); res = CLI_SRS(sop0, op1));
+ 
+-            DEFINE_BINOP(OP_BC_AND, res = op0 & op1);
+-            DEFINE_BINOP(OP_BC_OR, res = op0 | op1);
+-            DEFINE_BINOP(OP_BC_XOR, res = op0 ^ op1);
++            DEFINE_BINOP(OP_BC_AND, printf("%d & %d\n", op0, op1); res = op0 & op1);
++            DEFINE_BINOP(OP_BC_OR, printf("%d | %d\n", op0, op1); res = op0 | op1);
++            DEFINE_BINOP(OP_BC_XOR, printf("%d ^ %d\n", op0, op1); res = op0 ^ op1);
+ 
+             // clang-format off
+             DEFINE_SCASTOP(OP_BC_SEXT,
+@@ -803,16 +803,16 @@ int cli_vm_execute(const struct cli_bc *bc, struct cli_bc_ctx *ctx, const struct
+             DEFINE_OP_BC_RET_N(OP_BC_RET_VOID * 5 + 3, uint8_t, (void), (void));
+             DEFINE_OP_BC_RET_N(OP_BC_RET_VOID * 5 + 4, uint8_t, (void), (void));
+ 
+-            DEFINE_ICMPOP(OP_BC_ICMP_EQ, res = (op0 == op1));
+-            DEFINE_ICMPOP(OP_BC_ICMP_NE, res = (op0 != op1));
+-            DEFINE_ICMPOP(OP_BC_ICMP_UGT, res = (op0 > op1));
+-            DEFINE_ICMPOP(OP_BC_ICMP_UGE, res = (op0 >= op1));
+-            DEFINE_ICMPOP(OP_BC_ICMP_ULT, res = (op0 < op1));
+-            DEFINE_ICMPOP(OP_BC_ICMP_ULE, res = (op0 <= op1));
+-            DEFINE_ICMPOP(OP_BC_ICMP_SGT, res = (sop0 > sop1));
+-            DEFINE_ICMPOP(OP_BC_ICMP_SGE, res = (sop0 >= sop1));
+-            DEFINE_ICMPOP(OP_BC_ICMP_SLE, res = (sop0 <= sop1));
+-            DEFINE_ICMPOP(OP_BC_ICMP_SLT, res = (sop0 < sop1));
++            DEFINE_ICMPOP(OP_BC_ICMP_EQ, printf("%d == %d (%08x == %08x)\n", op0, op1, op0, op1); res = (op0 == op1));
++            DEFINE_ICMPOP(OP_BC_ICMP_NE, printf("%d != %d\n", op0, op1); res = (op0 != op1));
++            DEFINE_ICMPOP(OP_BC_ICMP_UGT, printf("%d > %d\n", op0, op1); res = (op0 > op1));
++            DEFINE_ICMPOP(OP_BC_ICMP_UGE, printf("%d >= %d\n", op0, op1); res = (op0 >= op1));
++            DEFINE_ICMPOP(OP_BC_ICMP_ULT, printf("%d < %d\n", op0, op1); res = (op0 < op1));
++            DEFINE_ICMPOP(OP_BC_ICMP_ULE, printf("%d <= %d\n", op0, op1); res = (op0 <= op1));
++            DEFINE_ICMPOP(OP_BC_ICMP_SGT, printf("%d >s %d\n", op0, op1); res = (sop0 > sop1));
++            DEFINE_ICMPOP(OP_BC_ICMP_SGE, printf("%d >=s %d\n", op0, op1); res = (sop0 >= sop1));
++            DEFINE_ICMPOP(OP_BC_ICMP_SLE, printf("%d <=s %d\n", op0, op1); res = (sop0 <= sop1));
++            DEFINE_ICMPOP(OP_BC_ICMP_SLT, printf("%d <s %d\n", op0, op1); res = (sop0 < sop1));
+ 
+             case OP_BC_SELECT * 5: {
+                 uint8_t t0, t1, t2;
