@@ -1,0 +1,112 @@
+diff --git a/include/Attack.hpp b/include/Attack.hpp
+index 0171073..5be5673 100644
+--- a/include/Attack.hpp
++++ b/include/Attack.hpp
+@@ -54,6 +54,10 @@ class Attack
+         u32arr<CONTIGUOUS_SIZE> zlist;
+         u32arr<CONTIGUOUS_SIZE> ylist; // the first two elements are not used
+         u32arr<CONTIGUOUS_SIZE> xlist; // the first four elements are not used
++
++        // Custom verification logic
++        bytevec extraCipher, extraPlain;
++        std::size_t extraPlainPosition;
+ };
+ 
+ /// \brief Iterate on Zi[2,32) candidates to try and find complete internal keys
+diff --git a/src/Attack.cpp b/src/Attack.cpp
+index 21c2272..6938851 100644
+--- a/src/Attack.cpp
++++ b/src/Attack.cpp
+@@ -4,9 +4,44 @@
+ #include "KeystreamTab.hpp"
+ #include "MultTab.hpp"
+ 
++#include <iomanip>
++
+ Attack::Attack(const Data& data, std::size_t index, std::vector<Keys>& solutions, bool exhaustive, Progress& progress)
+  : data(data), index(index + 1 - Attack::CONTIGUOUS_SIZE), solutions(solutions), exhaustive(exhaustive), progress(progress)
+-{}
++{
++    extraPlainPosition = 11;
++    for (auto c : "\x9F\x61\x80\xB0\xE2\xFB\x7C\x52\x9E\x28\x51\x02\x5F\x12\x1E\x89") {
++        if (c == 0) break;
++        extraCipher.push_back(c);
++    }
++    for (auto c : "\x3b\xe2\xf2\xba\x77") {
++        if (c == 0) break;
++        extraPlain.push_back(c);
++    }
++
++
++    std::cout << std::setfill('0') << std::hex;
++
++    std::cout << "cipherText: ";
++    for(byte c : data.ciphertext) {
++        std::cout << std::setw(2) << static_cast<int>(c) << ' ';
++    }
++    std::cout << std::endl;
++
++    std::cout << "extraCipher: ";
++    for(byte c : extraCipher) {
++        std::cout << std::setw(2) << static_cast<int>(c) << ' ';
++    }
++    std::cout << std::endl;
++
++    std::cout << "extraPlain: ";
++    for(byte c : extraPlain) {
++        std::cout << std::setw(2) << static_cast<int>(c) << ' ';
++    }
++    std::cout << std::endl;
++
++    std::cout << std::setfill(' ') << std::dec;
++}
+ 
+ void Attack::carryout(uint32 z7_2_32)
+ {
+@@ -155,6 +190,31 @@ void Attack::testXlist()
+             return;
+     }
+ 
++    // Custom check for junk.dat
++    Keys customKey(x, ylist[3], zlist[3]);
++    using rit = std::reverse_iterator<bytevec::const_iterator>;
++    for(rit p = rit(data.plaintext.begin() + index + 3),
++            c = rit(data.ciphertext.begin() + data.offset + index + 3);
++            p != data.plaintext.rend();
++            ++p, ++c)
++    {
++        customKey.updateBackward(*c);
++    }
++    
++    // First, run backward to reset the state
++    customKey.updateBackward(data.ciphertext, data.offset, 0);
++
++    // Then, run it forward again with `junk.dat` data
++    for (std::size_t idxWithHeader = 0; idxWithHeader < extraCipher.size(); idxWithHeader++) {
++        byte c = extraCipher[idxWithHeader];
++        byte expectedP = c ^ customKey.getK();
++        if (idxWithHeader >= extraPlainPosition
++            && expectedP != extraPlain[idxWithHeader - extraPlainPosition]) {
++            return;
++        }
++        customKey.update(expectedP);
++    }
++
+     // all tests passed so the keys are found
+ 
+     // get the keys associated with the initial state
+diff --git a/src/Data.cpp b/src/Data.cpp
+index 194c298..5a14cce 100644
+--- a/src/Data.cpp
++++ b/src/Data.cpp
+@@ -141,8 +141,8 @@ Data::Data(bytevec ciphertextArg, bytevec plaintextArg, int offsetArg, const std
+     // check that there is enough known plaintext
+     if(plaintext.size() < Attack::CONTIGUOUS_SIZE)
+         throw Error("not enough contiguous plaintext ("+std::to_string(plaintext.size())+" bytes available, minimum is "+std::to_string(Attack::CONTIGUOUS_SIZE)+")");
+-    if(plaintext.size() + extraPlaintext.size() < Attack::ATTACK_SIZE)
+-        throw Error("not enough plaintext ("+std::to_string(plaintext.size() + extraPlaintext.size())+" bytes available, minimum is "+std::to_string(Attack::ATTACK_SIZE)+")");
++    // if(plaintext.size() + extraPlaintext.size() < Attack::ATTACK_SIZE)
++    //     throw Error("not enough plaintext ("+std::to_string(plaintext.size() + extraPlaintext.size())+" bytes available, minimum is "+std::to_string(Attack::ATTACK_SIZE)+")");
+ 
+     // reorder remaining extra plaintext for filtering
+     {

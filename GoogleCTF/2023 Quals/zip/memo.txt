@@ -1,0 +1,20 @@
+Index Encryption Compression CRC32    Uncompressed  Packed size Name
+----- ---------- ----------- -------- ------------ ------------ ----------------
+    0 ZipCrypto  Store       3b3953bc            4           16 junk.dat
+    1 ZipCrypto  Store       4712d99a           50           62 flag.txt
+
+>>> hexlify(bytes("CTF{", "utf-8-sig"))
+b'efbbbf4354467b'
+>>> hexlify(bytes("}", "utf-8"))
+b'7d'
+
+Fork bkcrack and apply `bkcrack.patch`
+
+// setup
+cmake -S . -B build -DCMAKE_INSTALL_PREFIX=install
+// build
+cmake --build build --config Release
+// run
+build/src/bkcrack -C ../zip/hard.zip -c flag.txt -x 0 efbbbf4354467b -x 49 7d -d flag.txt
+
+junk.dat check is hardcoded
