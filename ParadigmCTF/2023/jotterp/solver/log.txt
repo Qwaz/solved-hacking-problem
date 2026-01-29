@@ -1,0 +1,613 @@
+[176, 2, 0, 0, 1, 0, 0, 0, 168, 96, 1, 0, 4, 0, 0, 0, 128, 1, 0, 0, 1, 0, 0, 0, 232, 94, 1, 0, 4, 0, 0, 0, 176, 2, 0, 0, 1, 0, 0, 0, 184, 96, 1, 0, 4, 0, 0, 0, 128, 1, 0, 0, 1, 0, 0, 0, 8, 95, 1, 0, 4, 0, 0, 0, 176, 2, 0, 0, 1, 0, 0, 0, 200, 96, 1, 0, 4, 0, 0, 0, 128, 1, 0, 0, 1, 0, 0, 0, 40, 95, 1, 0, 4, 0, 0, 0, 176, 2, 0, 0, 1, 0, 0, 0, 216, 96, 1, 0, 4, 0, 0, 0, 128, 1, 0, 0, 1, 0, 0, 0, 72, 95, 1, 0, 4, 0, 0, 0, 176, 2, 0, 0, 1, 0, 0, 0, 232, 96, 1, 0, 4, 0, 0, 0, 128, 1, 0, 0, 1, 0, 0, 0, 104, 95, 1, 0, 4, 0, 0, 0, 168, 27, 0, 0, 1, 0, 0, 0, 88, 96, 1, 0, 4, 0, 0, 0, 128, 1, 0, 0, 1, 0, 0, 0, 136, 95, 1, 0, 4, 0, 0, 0, 176, 2, 0, 0, 1, 0, 0, 0, 248, 96, 1, 0, 4, 0, 0, 0, 48, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 70, 76, 65, 71, 0, 0, 0, 0, 176, 95, 1, 0, 4, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 184, 95, 1, 0, 4, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 202, 154, 59, 0, 0, 0, 0, 55, 19, 0, 0, 0, 0, 0, 0, 12, 1, 252, 87, 208, 222, 131, 53, 55, 135, 252, 223, 32, 181, 133, 175, 68, 43, 176, 179, 71, 84, 12, 115, 208, 28, 99, 128, 0, 0, 0, 0, 0, 0, 0, 0, 252, 226, 174, 244, 161, 123, 190, 219, 21, 237, 226, 217, 185, 51, 104, 51, 88, 170, 53, 95, 80, 229, 13, 213, 38, 32, 205, 22, 228, 57, 51, 140, 1, 1, 203, 171, 110, 209, 86, 8, 2, 212, 157, 91, 75, 204, 112, 26, 252, 110, 169, 44, 231, 169, 148, 114, 207, 176, 101, 27, 190, 167, 152, 60, 172, 6, 1, 1, 0, 0, 0, 0, 16, 96, 1, 0, 4, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 216, 95, 1, 0, 4, 0, 0, 0, 52, 0, 0, 0, 0, 0, 0, 0, 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 136, 15, 1, 0, 2, 0, 0, 0, 168, 95, 1, 0, 4, 0, 0, 0, 120, 15, 1, 0, 2, 0, 0, 0, 64, 127, 0, 0, 3, 0, 0, 0, 128, 15, 1, 0, 2, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 104, 15, 1, 0, 2, 0, 0, 0, 200, 95, 1, 0, 4, 0, 0, 0, 112, 15, 1, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 48, 81, 0, 0, 4, 0, 0, 0, 55, 67, 0, 0, 0, 0, 0, 0]
+SBPF Version: V1
+Function: 0x129a15e28 - 50 (<empty>)
+Function: 0x129a15e2c - 2589 (<empty>)
+Function: 0x129a15e30 - 979 (<empty>)
+Function: 0x129a15e34 - 88 (<empty>)
+Function: 0x129a15e38 - 1460 (<empty>)
+Function: 0x129a15e3c - 3515 (<empty>)
+Function: 0x129a15e40 - 1398 (<empty>)
+Function: 0x129a15e44 - 1777 (<empty>)
+Function: 0x129a15e48 - 1464 (<empty>)
+Function: 0x129a15e4c - 393 (<empty>)
+Function: 0x129a15e50 - 359 (<empty>)
+Function: 0x129a162c8 - 1837 (<empty>)
+Function: 0x129a16668 - 744 (<empty>)
+Function: 0x129a1666c - 4566 (<empty>)
+Function: 0x129a16670 - 12 (<empty>)
+Function: 0x129a16674 - 361 (<empty>)
+Function: 0x129a16678 - 3764 (<empty>)
+Function: 0x129a1667c - 289 (<empty>)
+Function: 0x129a162cc - 1303 (<empty>)
+Function: 0x129a16ce8 - 1791 (<empty>)
+Function: 0x129a16cec - 2613 (<empty>)
+Function: 0x129a16cf0 - 485 (<empty>)
+Function: 0x129a16cf4 - 2243 (<empty>)
+Function: 0x129a16cf8 - 2858 (<empty>)
+Function: 0x129a162d0 - 1809 (<empty>)
+Function: 0x129a15818 - 3393 (<empty>)
+Function: 0x129a1581c - 190 (entrypoint)
+Function: 0x129a15820 - 2854 (<empty>)
+Function: 0x129a15824 - 2385 (<empty>)
+Function: 0x129a15828 - 735 (<empty>)
+Function: 0x129a1582c - 323 (<empty>)
+Function: 0x129a15830 - 4298 (<empty>)
+Function: 0x129a15834 - 1253 (<empty>)
+Function: 0x129a15838 - 1255 (<empty>)
+Function: 0x129a1583c - 3766 (<empty>)
+Function: 0x129a162d4 - 2848 (<empty>)
+Function: 0x129a16808 - 4668 (<empty>)
+Function: 0x129a1680c - 1246 (<empty>)
+Function: 0x129a16810 - 4132 (<empty>)
+Function: 0x129a16814 - 1869 (<empty>)
+Function: 0x129a16818 - 3547 (<empty>)
+Function: 0x129a1681c - 1250 (<empty>)
+Function: 0x129a16820 - 3487 (<empty>)
+Function: 0x129a162d8 - 1248 (<empty>)
+Function: 0x129a16b48 - 290 (<empty>)
+Function: 0x129a16b4c - 1261 (<empty>)
+Function: 0x129a16b50 - 3485 (<empty>)
+Function: 0x129a16b54 - 3517 (<empty>)
+Function: 0x129a16b58 - 1244 (<empty>)
+Function: 0x129a162dc - 2919 (<empty>)
+Function: 0x129a164c8 - 4251 (<empty>)
+Function: 0x129a164cc - 1547 (<empty>)
+Function: 0x129a164d0 - 874 (<empty>)
+Function: 0x129a164d4 - 3545 (<empty>)
+Function: 0x129a164d8 - 1443 (<empty>)
+Function: 0x129a164dc - 4345 (<empty>)
+Function: 0x129a164e0 - 363 (<empty>)
+Function: 0x129a164e4 - 1989 (<empty>)
+Function: 0x129a164e8 - 2862 (<empty>)
+Function: 0x129a164ec - 357 (<empty>)
+Function: 0x129a164f0 - 3575 (<empty>)
+Function: 0x129a162e0 - 4516 (<empty>)
+Function: 0x129a169a8 - 66 (<empty>)
+Function: 0x129a169ac - 263 (<empty>)
+Function: 0x129a169b0 - 1671 (<empty>)
+Function: 0x129a169b4 - 4427 (<empty>)
+Function: 0x129a169b8 - 433 (<empty>)
+Function: 0x129a169bc - 4034 (<empty>)
+Function: 0x129a169c0 - 1462 (<empty>)
+Function: 0x129a169c4 - 1351 (<empty>)
+System Function: 0x129824a78 - sol_sha256
+System Function: 0x129824a7c - sol_blake3
+System Function: 0x129824a80 - sol_secp256k1_recover
+System Function: 0x129824a84 - sol_get_last_restart_slot
+System Function: 0x129824a88 - sol_log_
+System Function: 0x129824a8c - sol_get_epoch_schedule_sysvar
+System Function: 0x129824a90 - sol_alt_bn128_compression
+System Function: 0x129824a94 - sol_memset_
+System Function: 0x129824a98 - sol_memmove_
+System Function: 0x129824a9c - sol_try_find_program_address
+System Function: 0x129824db8 - sol_log_compute_units_
+System Function: 0x129824c18 - sol_log_64_
+System Function: 0x129824c1c - sol_get_return_data
+System Function: 0x129824c20 - sol_memcmp_
+System Function: 0x129824c24 - sol_curve_multiscalar_mul
+System Function: 0x129824c28 - sol_panic_
+System Function: 0x129824dbc - sol_memcpy_
+System Function: 0x1298252a8 - sol_log_data
+System Function: 0x1298252ac - sol_big_mod_exp
+System Function: 0x1298252b0 - sol_log_pubkey
+System Function: 0x1298252b4 - sol_alloc_free_
+System Function: 0x1298252b8 - sol_get_stack_height
+System Function: 0x1298252bc - sol_create_program_address
+System Function: 0x1298252c0 - sol_set_return_data
+System Function: 0x1298252c4 - sol_invoke_signed_c
+System Function: 0x1298252c8 - sol_curve_validate_point
+System Function: 0x1298252cc - sol_get_processed_sibling_instruction
+System Function: 0x1298252d0 - sol_alt_bn128_group_op
+System Function: 0x129824dc0 - abort
+System Function: 0x129825038 - sol_get_rent_sysvar
+System Function: 0x12982503c - sol_poseidon
+System Function: 0x129825040 - sol_get_clock_sysvar
+System Function: 0x129825044 - sol_invoke_signed_rust
+System Function: 0x129825048 - sol_keccak256
+System Function: 0x12982504c - sol_curve_group_op
+System Function: 0x129825050 - sol_remaining_compute_units
+System Function: 0x129825054 - sol_get_epoch_rewards_sysvar
+===           entrypoint           ===
+  pc = 190
+  r0 = 0x0
+  r1 = 0x400000000
+  r2 = 0x0
+  r3 = 0x0
+  r4 = 0x0
+  r5 = 0x0
+  r6 = 0x0
+  r7 = 0x0
+  r8 = 0x0
+  r9 = 0x0
+  r10 = 0x200001000
+======================================
+===   chall::process_instruction   ===
+  pc = 66
+  r0 = 0x300007f40
+  r1 = 0x200000fe0
+  r2 = 0x400015ec8
+  r3 = 0x200000fb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x0
+  r7 = 0x4
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200003000
+======================================
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015ec8
+  r2 = 0x240
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x200000fe0
+  r7 = 0x4
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200005000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x300007f40
+  r1 = 0x4000160a8
+  r2 = 0x1000002b0
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x240
+  r7 = 0x400015ec8
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200007000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015ee8
+  r2 = 0x100000180
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x230
+  r7 = 0x400015ec8
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200007000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x300007f40
+  r1 = 0x4000160b8
+  r2 = 0x1000002b0
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000180
+  r7 = 0x400015ee8
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200009000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015f08
+  r2 = 0x100000180
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000170
+  r7 = 0x400015ee8
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200009000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x300007f40
+  r1 = 0x4000160c8
+  r2 = 0x1000002b0
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000180
+  r7 = 0x400015f08
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000b000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015f28
+  r2 = 0x100000180
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000170
+  r7 = 0x400015f08
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000b000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x300007f40
+  r1 = 0x4000160d8
+  r2 = 0x1000002b0
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000180
+  r7 = 0x400015f28
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000d000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015f48
+  r2 = 0x100000180
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000170
+  r7 = 0x400015f28
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000d000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x300007f40
+  r1 = 0x4000160e8
+  r2 = 0x1000002b0
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000180
+  r7 = 0x400015f48
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000f000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015f68
+  r2 = 0x100000180
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000170
+  r7 = 0x400015f48
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000f000
+======================================
+Call to 100001ba8
+===     (invoke_signed entry)      ===
+  pc = 849
+  r0 = 0x300007f40
+  r1 = 0x400016058
+  r2 = 0x100001ba8
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000180
+  r7 = 0x400015f68
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200011000
+======================================
+===      (invoke_signed call)      ===
+  pc = 853
+  r0 = 0x300007f40
+  r1 = 0x400016058
+  r2 = 0x300007f40
+  r3 = 0x4
+  r4 = 0x400015fc8
+  r5 = 0x1
+  r6 = 0x100000180
+  r7 = 0x400015f68
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200011000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x0
+  r1 = 0x400015f88
+  r2 = 0x100000180
+  r3 = 0x4
+  r4 = 0x400015fc8
+  r5 = 0x1
+  r6 = 0x100000170
+  r7 = 0x400015f68
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200011000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x0
+  r1 = 0x4000160f8
+  r2 = 0x1000002b0
+  r3 = 0x4
+  r4 = 0x400015fc8
+  r5 = 0x1
+  r6 = 0x100000180
+  r7 = 0x400015f88
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200013000
+======================================
+Call to 100000130
+===           entrypoint           ===
+  pc = 190
+  r0 = 0x0
+  r1 = 0x400000000
+  r2 = 0x0
+  r3 = 0x0
+  r4 = 0x0
+  r5 = 0x0
+  r6 = 0x0
+  r7 = 0x0
+  r8 = 0x0
+  r9 = 0x0
+  r10 = 0x200001000
+======================================
+===   chall::process_instruction   ===
+  pc = 66
+  r0 = 0x300007f40
+  r1 = 0x200000fe0
+  r2 = 0x400015ec8
+  r3 = 0x200000fb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x0
+  r7 = 0x4
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200003000
+======================================
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015ec8
+  r2 = 0x240
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x200000fe0
+  r7 = 0x4
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200005000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x300007f40
+  r1 = 0x4000160a8
+  r2 = 0x1000002b0
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x240
+  r7 = 0x400015ec8
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200007000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015ee8
+  r2 = 0x100000180
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x230
+  r7 = 0x400015ec8
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200007000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x300007f40
+  r1 = 0x4000160b8
+  r2 = 0x1000002b0
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000180
+  r7 = 0x400015ee8
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200009000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015f08
+  r2 = 0x100000180
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000170
+  r7 = 0x400015ee8
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200009000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x300007f40
+  r1 = 0x4000160c8
+  r2 = 0x1000002b0
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000180
+  r7 = 0x400015f08
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000b000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015f28
+  r2 = 0x100000180
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000170
+  r7 = 0x400015f08
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000b000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x300007f40
+  r1 = 0x4000160d8
+  r2 = 0x1000002b0
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000180
+  r7 = 0x400015f28
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000d000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015f48
+  r2 = 0x100000180
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000170
+  r7 = 0x400015f28
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000d000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x300007f40
+  r1 = 0x4000160e8
+  r2 = 0x1000002b0
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000180
+  r7 = 0x400015f48
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000f000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x300007f40
+  r1 = 0x400015f68
+  r2 = 0x100000180
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000170
+  r7 = 0x400015f48
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x20000f000
+======================================
+Call to 100001ba8
+===     (invoke_signed entry)      ===
+  pc = 849
+  r0 = 0x300007f40
+  r1 = 0x400016058
+  r2 = 0x100001ba8
+  r3 = 0xb0
+  r4 = 0x400016108
+  r5 = 0x200001000
+  r6 = 0x100000180
+  r7 = 0x400015f68
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200011000
+======================================
+===      (invoke_signed call)      ===
+  pc = 853
+  r0 = 0x300007f40
+  r1 = 0x400016058
+  r2 = 0x300007f40
+  r3 = 0x4
+  r4 = 0x400015fc8
+  r5 = 0x1
+  r6 = 0x100000180
+  r7 = 0x400015f68
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200011000
+======================================
+Call to 100000180
+===         chall::process         ===
+  pc = 12
+  r0 = 0x0
+  r1 = 0x400015f88
+  r2 = 0x100000180
+  r3 = 0x4
+  r4 = 0x400015fc8
+  r5 = 0x1
+  r6 = 0x100000170
+  r7 = 0x400015f68
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200011000
+======================================
+Call to 1000002b0
+===          chall::write          ===
+  pc = 50
+  r0 = 0x0
+  r1 = 0x4000160f8
+  r2 = 0x1000002b0
+  r3 = 0x4
+  r4 = 0x400015fc8
+  r5 = 0x1
+  r6 = 0x100000180
+  r7 = 0x400015f88
+  r8 = 0x0
+  r9 = 0x4
+  r10 = 0x200013000
+======================================
+Call to 100000130
